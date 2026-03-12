@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CraftyOne | Our Goal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@600;700;800&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c3b4fd",
+                        "accent-pink": "#f472b6",
+                        "background-light": "#fdfcfd",
+                        "background-dark": "#130f23",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "Spline Sans", "sans-serif"],
+                        "body": ["Nunito", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft-lavender': '0 20px 40px -10px rgba(195, 180, 253, 0.4)',
+                        'badge': '0 4px 0 0 rgba(0,0,0,0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-body bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] bg-fixed;
+            }
+            h1, h2, h3 {
+                @apply font-display;
+            }
+        }
+        .rainbow-overlay {
+            background: linear-gradient(45deg, rgba(255,182,193,0.4), rgba(255,255,224,0.4), rgba(173,216,230,0.4));
+            mask-image: radial-gradient(circle at bottom, transparent 40%, black 41%);
+            -webkit-mask-image: radial-gradient(circle at bottom, transparent 40%, black 41%);
+        }
+        .wavy-divider {
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V120c159.35-13.9,247.42-52.75,321.39-63.56Z' fill='%23000000'/%3E%3C/svg%3E");
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V120c159.35-13.9,247.42-52.75,321.39-63.56Z' fill='%23000000'/%3E%3C/svg%3E");
+            mask-size: cover;
+            -webkit-mask-size: cover;
+        }
+        .shimmer-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-bg::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 15%);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+        .wavy-border {
+            border: 4px solid #f472b6;
+            mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 5 0, 10 10 T 20 10 T 30 10 T 40 10 T 50 10 T 60 10 T 70 10 T 80 10 T 90 10 T 100 10 V 90 Q 95 100, 90 90 T 80 90 T 70 90 T 60 90 T 50 90 T 40 90 T 30 90 T 20 90 T 10 90 T 0 90 Z' fill='black'/%3E%3C/svg%3E");
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 5 0, 10 10 T 20 10 T 30 10 T 40 10 T 50 10 T 60 10 T 70 10 T 80 10 T 90 10 T 100 10 V 90 Q 95 100, 90 90 T 80 90 T 70 90 T 60 90 T 50 90 T 40 90 T 30 90 T 20 90 T 10 90 T 0 90 Z' fill='black'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="text-slate-900 dark:text-slate-100">
+ <!-- Top Navigation -->
+ <nav class="sticky top-0 z-50 w-full bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-primary/20 px-6 py-4">
+ <div class="max-w-7xl mx-auto flex items-center justify-between">
+ <div class="hidden lg:flex items-center gap-3">
+ <a data-action="share" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">share</span></a>
+  <a class="w-10 h-10 flex items-center justify-center rounded-full bg-accent-pink/20 hover:bg-accent-pink transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">photo_camera</span></a>
+ </div>
+ <div class="flex flex-col items-center gap-1">
+ <div class="flex items-center gap-2">
+ <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+ <h1 class="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">CraftyOne ✨</h1>
+ </div>
+ <div class="hidden md:flex items-center gap-8">
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="home.html">Home</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="about.html">About</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="contactus.html">Contact</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="products.html">Products</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="plans.html">Plans</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="reviews.html">Reviews</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="extra.html">Our Goal</a>
+ </div>
+ </div>
+ <div class="flex items-center gap-3">
+ <button onclick="window.location.href='cart.html'" class="flex items-center gap-2 px-6 py-2 rounded-full btn-3d-primary text-slate-900 font-bold">
+ <span class="material-symbols-outlined">shopping_bag</span>
+ <span class="hidden sm:inline">Cart</span>
+ </button>
+ <button onclick="window.location.href='about.html'" class="flex items-center gap-2 px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold border-b-4 border-slate-200 shadow-sm active:border-b-0 active:translate-y-[2px]">
+ <span class="material-symbols-outlined">person</span>
+ </button>
+ </div>
+ </div>
+ </nav>
+<section class="flex flex-col md:flex-row w-full min-h-[650px] overflow-hidden bg-primary">
+<div class="w-full md:w-1/2 relative min-h-[450px] md:min-h-full wavy-divider z-10">
+<div class="absolute inset-0 bg-center bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADaTAK0Wa5iL7btgG01aG0dLDxuliEnwdqeo05pNtY3fBQgOzROnvwCTIHZMf-tBLLFllQvdkUtP7U6s2oljiDLVl_46hWNGq8ytRBHMbvl-wZVeemhJzha8cIJ4R-PnIKf9WJSSO4_eXpiKgJK1oXho987I7O0Oyd77hsrdx1_C3iiiLredcZHVJLTvgUwZ6sX0vA_kCvBsmnMrDqtxDpbP67tHBP4twAZCUr5mdVoMkDzQ77eCTVgFIlfG3P3GDz4KVbOg7xlzw');"></div>
+<div class="absolute inset-0 rainbow-overlay opacity-50"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/30 to-transparent"></div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center items-start px-12 md:px-24 py-24 text-white shimmer-bg">
+<h2 class="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8 drop-shadow-md">
+            Our mission <br/>for your parties
+        </h2>
+<p class="text-xl md:text-2xl font-semibold opacity-95 mb-12 max-w-lg leading-relaxed">
+            Creating unforgettable moments with a playful, maximalist candy and confetti aesthetic for every celebration.
+        </p>
+<button class="bg-white text-primary px-12 py-5 rounded-full font-extrabold text-xl hover:scale-105 transition-all shadow-xl hover:shadow-2xl">
+            Contact Us
+        </button>
+</div>
+</section>
+<section class="py-32 px-6 md:px-20 relative overflow-hidden">
+<div class="absolute top-10 left-10 text-primary opacity-20 transform -rotate-12 select-none">
+<span class="material-symbols-outlined text-8xl">celebration</span>
+</div>
+<div class="absolute bottom-10 right-10 text-accent-pink opacity-20 transform rotate-12 select-none">
+<span class="material-symbols-outlined text-8xl">bakery_dining</span>
+</div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-24">
+<h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 tracking-tight">Our Premium Services</h2>
+<div class="w-32 h-3 bg-accent-pink mx-auto rounded-full shadow-sm"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="bg-white/80 backdrop-blur-sm dark:bg-slate-800 p-12 rounded-2xl shadow-soft-lavender border-2 border-primary/20 flex flex-col items-center text-center group hover:-translate-y-3 transition-all duration-500">
+<div class="relative mb-10">
+<div class="w-24 h-24 bg-primary text-white rounded-[40%_60%_70%_30%/40%_50%_60%_50%] flex items-center justify-center text-4xl font-extrabold shadow-badge transform group-hover:rotate-12 transition-transform">
+                        1
+                    </div>
+<div class="absolute -top-2 -right-2 w-8 h-8 bg-accent-pink rounded-full border-4 border-white"></div>
+</div>
+<h3 class="text-3xl font-extrabold mb-6 text-slate-900 dark:text-slate-100">Event Planning</h3>
+<p class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed font-medium">
+                    Full-service coordination for your dream celebration. We handle everything from venue sourcing to final execution.
+                </p>
+<div class="mt-8 text-accent-pink material-symbols-outlined text-5xl opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all">
+                    auto_awesome
+                </div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm dark:bg-slate-800 p-12 rounded-2xl shadow-soft-lavender border-2 border-primary/20 flex flex-col items-center text-center group hover:-translate-y-3 transition-all duration-500">
+<div class="relative mb-10">
+<div class="w-24 h-24 bg-accent-pink text-white rounded-[50%_50%_50%_50%/60%_60%_40%_40%] flex items-center justify-center text-4xl font-extrabold shadow-badge transform group-hover:-rotate-12 transition-transform">
+                        2
+                    </div>
+<div class="absolute -top-2 -left-2 w-8 h-8 bg-primary rounded-full border-4 border-white"></div>
+</div>
+<h3 class="text-3xl font-extrabold mb-6 text-slate-900 dark:text-slate-100">Party Supplies</h3>
+<p class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed font-medium">
+                    High-quality balloons, confetti, and themed kits delivered to your door. The ultimate party essentials for DIY decorators.
+                </p>
+<div class="mt-8 text-primary material-symbols-outlined text-5xl opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all">
+                    shopping_bag
+                </div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm dark:bg-slate-800 p-12 rounded-2xl shadow-soft-lavender border-2 border-primary/20 flex flex-col items-center text-center group hover:-translate-y-3 transition-all duration-500">
+<div class="relative mb-10">
+<div class="w-24 h-24 bg-primary text-white rounded-[60%_40%_30%_70%/50%_40%_70%_60%] flex items-center justify-center text-4xl font-extrabold shadow-badge transform group-hover:rotate-6 transition-transform">
+                        3
+                    </div>
+<div class="absolute -bottom-2 -right-2 w-8 h-8 bg-accent-pink rounded-full border-4 border-white"></div>
+</div>
+<h3 class="text-3xl font-extrabold mb-6 text-slate-900 dark:text-slate-100">Custom Decor</h3>
+<p class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed font-medium">
+                    Bespoke installations tailored to your party theme. Custom backdrops, balloon arches, and artistic centerpieces.
+                </p>
+<div class="mt-8 text-accent-pink material-symbols-outlined text-5xl opacity-30 group-hover:opacity-100 group-hover:scale-110 transition-all">
+                    cake
+                </div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-background-dark text-white pt-20 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent-pink to-accent-teal"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 sm:gap-20 relative z-10">
+<div class="col-span-1 md:col-span-2 space-y-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+<h2 class="text-3xl font-black tracking-tighter">CraftyOne ✨</h2>
+</div>
+<p class="text-slate-400 max-w-sm text-lg leading-relaxed font-medium">
+                Making your moments memorable since 2018. We believe every day is a reason to celebrate.
+            </p>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">camera</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-accent-pink hover:border-accent-pink transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">share</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Quick Links</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="home.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="products.html">Shop All</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="ourstory.html">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="contactus.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Support</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="plans.html">Shipping Policy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Returns</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="privacy.html">Privacy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 sm:mt-32 pt-10 sm:pt-12 border-t border-slate-800/50 text-center">
+<p class="text-slate-500 font-bold uppercase tracking-widest text-xs"> 2024 CraftyOne. Stay sparkly &amp; keep the party going! </p>
+</div>
+</footer>
+
+  <script>
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      if (!(target instanceof Element)) return;
+      var actionEl = target.closest('[data-action]');
+      if (!actionEl) return;
+      var action = actionEl.getAttribute('data-action');
+      if (action === 'share') {
+        e.preventDefault();
+        var shareData = { title: document.title, url: window.location.href };
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () {});
+        } else {
+          window.prompt('Copy link:', window.location.href);
+        }
+      }
+    });
+  </script>
+</body></html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4e25f4",
+            "background-light": "#FFF7ED",
+            "background-dark": "#131022",
+            "pastel-teal": "#99f6e4",
+            "pastel-pink": "#fce7f3",
+            "pastel-lavender": "#ede9fe",
+          },
+          fontFamily: {
+            "display": ["Spline Sans", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <title>CraftyOne | About Our Story</title>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+  <div class="relative min-h-screen">
+    <!-- Organic Blobs Background -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-pastel-pink/40 blur-[100px]"></div>
+      <div class="absolute top-[20%] -right-[5%] w-[30%] h-[50%] rounded-full bg-pastel-lavender/30 blur-[80px]"></div>
+      <div class="absolute bottom-[10%] left-[20%] w-[35%] h-[35%] rounded-full bg-pastel-teal/20 blur-[120px]"></div>
+    </div>
+    <div class="relative z-10">
+      <!-- Top Navigation -->
+      <!-- Top Navigation -->
+      <nav
+        class="sticky top-0 z-50 w-full bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-primary/20 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="hidden lg:flex items-center gap-3">
+            <a data-action="share"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary transition-colors group"
+              href="#"><span class="material-symbols-outlined text-slate-900 text-xl">share</span></a>
+            <a class="w-10 h-10 flex items-center justify-center rounded-full bg-accent-pink/20 hover:bg-accent-pink transition-colors group"
+              href="#"><span class="material-symbols-outlined text-slate-900 text-xl">photo_camera</span></a>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+              <h1 class="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">CraftyOne ✨</h1>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+              <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                href="home.html">Home</a>
+              <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                href="about.html">About</a>
+              <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                href="contactus.html">Contact</a>
+              <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                href="products.html">Products</a>
+              <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                href="plans.html">Plans</a>
+              <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                href="reviews.html">Reviews</a>
+              <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                href="extra.html">Our Goal</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button onclick="window.location.href='cart.html'"
+              class="flex items-center gap-2 px-6 py-2 rounded-full btn-3d-primary text-slate-900 font-bold">
+              <span class="material-symbols-outlined">shopping_bag</span>
+              <span class="hidden sm:inline">Cart</span>
+            </button>
+            <button onclick="window.location.href='about.html'"
+              class="flex items-center gap-2 px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold border-b-4 border-slate-200 shadow-sm active:border-b-0 active:translate-y-[2px]">
+              <span class="material-symbols-outlined">person</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section class="max-w-7xl mx-auto px-10 py-20 flex flex-col items-center text-center">
+        <div class="relative mb-12">
+          <!-- Floating Decorations (Stickers) -->
+          <div class="absolute -top-6 -left-6 bg-white p-3 rounded-full shadow-xl rotate-[-15deg] z-20">
+            <span class="material-symbols-outlined text-primary text-3xl">bubble_chart</span>
+          </div>
+          <div class="absolute top-1/4 -right-10 bg-pastel-teal p-3 rounded-full shadow-xl rotate-[10deg] z-20">
+            <span class="material-symbols-outlined text-slate-800 text-3xl">potted_plant</span>
+          </div>
+          <div class="absolute -bottom-4 -left-8 bg-pastel-pink p-3 rounded-full shadow-xl rotate-[20deg] z-20">
+            <span class="material-symbols-outlined text-pink-600 text-3xl">favorite</span>
+          </div>
+          <div class="absolute bottom-1/4 -right-12 bg-white p-3 rounded-full shadow-xl rotate-[-5deg] z-20">
+            <span class="material-symbols-outlined text-amber-400 text-3xl">star</span>
+          </div>
+          <!-- Main Hero Image -->
+          <div class="relative size-72 md:size-96 rounded-full border-[12px] border-white shadow-2xl overflow-hidden">
+            <img alt="Founder Flo" class="w-full h-full object-cover"
+              data-alt="Portrait of smiling founder Flo in creative studio" src="Screenshot 2026-03-12 211738.png" />
+          </div>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black mb-6 max-w-3xl leading-tight">
+          Meet the Heart of <span class="text-primary italic">the Party</span>
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+          Founder Flo bringing the magic to every celebration with floating balloons,
+          custom confetti, and a whole lot of sparkle. We believe every moment is worth celebrating.
+        </p>
+      </section>
+      <!-- Our Story Timeline -->
+      <section class="max-w-7xl mx-auto px-10 py-24 relative">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-black mb-4">Our Story</h2>
+          <p class="text-slate-500">From humble beginnings to party legends.</p>
+        </div>
+        <div class="relative">
+          <!-- Wavy Line SVG -->
+          <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-2 pointer-events-none hidden md:block">
+            <svg class="h-full w-12 text-pastel-teal/60" fill="none" preserveaspectratio="none" viewbox="0 0 40 1000">
+              <path d="M20 0C40 100 0 200 20 300C40 400 0 500 20 600C40 700 0 800 20 900" stroke="currentColor"
+                stroke-dasharray="8 8" stroke-width="4"></path>
+            </svg>
+          </div>
+          <!-- Timeline Item 1 -->
+          <div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 mb-32 relative">
+            <div class="w-full md:w-1/2 flex justify-end">
+              <div class="bg-white p-4 shadow-xl rotate-[-3deg] rounded-none border-[12px] border-white w-72">
+                <img alt="The Garage" class="w-full h-48 object-cover mb-4 grayscale hover:grayscale-0 transition-all"
+                  data-alt="Old garage filled with party supplies and boxes"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc-rRSr9wF02WoaHIxwIlrS64K-CvdQ-BxSge8x0jlTEDaaW-de5v-ADMjBIXoZaEIcKquStUb9aXfUzheFgpdvTQilnRaAxfRwZVy2omos2urOjeK02DaKeAJUFB5qWq_dht8CxShVHuKuexvu6r6tmGjp7XAqeLSH-FZ8fVx88t9vxi_JDklqB5ek-Rq5QaHmV-HmsMvFv56f3yTr6VnBsN87lVP7TpVHELoxrmbKpYDLEbVjiTvh2Cb-ZlDQ13DfGXYoxtby8E" />
+                <p class="text-sm font-medium text-center text-slate-400">Where it started (2018)</p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 text-center md:text-left">
+              <h3 class="text-2xl font-bold mb-3 text-primary">The Garage Beginning</h3>
+              <p class="text-slate-600 dark:text-slate-400 max-w-sm">Started in a small home garage with nothing but a
+                helium tank and a big dream to make people smile.</p>
+            </div>
+          </div>
+          <!-- Timeline Item 2 -->
+          <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-10 md:gap-20 mb-32 relative">
+            <div class="w-full md:w-1/2 flex justify-start">
+              <div class="bg-white p-4 shadow-xl rotate-[4deg] rounded-none border-[12px] border-white w-72">
+                <img alt="First Gala" class="w-full h-48 object-cover mb-4 grayscale hover:grayscale-0 transition-all"
+                  data-alt="Elegant ballroom decorated with massive balloon arches"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV7m6axILAI3KKR2pY3VYULBy9mpBXi1w13O2ZNKj8Xpl4kFP4azRnY3wKI1bSrJQwqnQsDkNC7VijuWy44je6LXz6r23OnI7dTAn_cjTw8JUpVDcS1w9OJd6-hUgLGsYWuibZUFzbdthPke8AUdjRa91cM-JL0b3fdwcsXMQvkPC6_OxchQClt0pcTiFbCx0D4QVgrri-IDAsuf7r5mlVZFgx2JxLk7F4NbOFF10hfMBzffTT_StLa_XGxfRSbrdDZIvTWl4GS2w" />
+                <p class="text-sm font-medium text-center text-slate-400">Our first gala (2020)</p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 text-center md:text-right">
+              <h3 class="text-2xl font-bold mb-3 text-primary">First Big Event</h3>
+              <p class="text-slate-600 dark:text-slate-400 max-w-sm ml-auto">Our first 100-person gala taught us that no
+                dream is too big if you have enough confetti.</p>
+            </div>
+          </div>
+          <!-- Timeline Item 3 -->
+          <div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 relative">
+            <div class="w-full md:w-1/2 flex justify-end">
+              <div class="bg-white p-4 shadow-xl rotate-[-2deg] rounded-none border-[12px] border-white w-72">
+                <img alt="The Studio" class="w-full h-48 object-cover mb-4 grayscale hover:grayscale-0 transition-all"
+                  data-alt="Bright modern studio space with pastel walls"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkVz16vTr42uYC8V3vh2nBw922i_sN0syHxHZNfmJQfjmXcqJ6V1xeapIUNCVQw91ZFGTTnEm3frGX05IGqcFmmZkgq7g2JCO2-bvRFaCWtwK393cV_ED0q1Ch8rcMJ9Oh6W-ynu-OEau5snG_G3lgesmKk75jfhjH9u4WhjZIBGxrHr3XH6gQRw74eT8NfepIm7hQHwiSgZIRGzGG5GHVxpOXrcdJclj47JIJAv-4X6WblbHFWaRcFn1RgtlXfwfa5-xOfGmyHPw" />
+                <p class="text-sm font-medium text-center text-slate-400">The Studio (Today)</p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 text-center md:text-left">
+              <h3 class="text-2xl font-bold mb-3 text-primary">Opening the Studio</h3>
+              <p class="text-slate-600 dark:text-slate-400 max-w-sm">Moved into our dream pastel studio where the magic
+                happens daily. Spreading joy nationwide!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Meet the Team -->
+      <section class="max-w-7xl mx-auto px-10 py-24">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-black mb-4">Meet the Team</h2>
+          <p class="text-slate-500">The crew behind the magic.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          <!-- Team Member 1 -->
+          <div class="flex flex-col items-center group">
+            <div class="relative size-48 mb-6">
+              <div class="absolute inset-0 bg-pastel-lavender rounded-full group-hover:scale-110 transition-transform">
+              </div>
+              <div class="absolute inset-2 overflow-hidden rounded-full">
+                <img alt="Flo" class="w-full h-full object-cover" data-alt="Headshot of founder Flo smiling warmly"
+                  src="Screenshot 2026-03-12 211743.png" />
+              </div>
+            </div>
+            <h4 class="text-xl font-bold">Flo Henderson</h4>
+            <p class="text-primary font-semibold text-sm">Founder &amp; CEO</p>
+          </div>
+          <!-- Team Member 2 -->
+          <div class="flex flex-col items-center group">
+            <div class="relative size-48 mb-6">
+              <div class="absolute inset-0 bg-pastel-pink rounded-full group-hover:scale-110 transition-transform">
+              </div>
+              <div class="absolute inset-2 overflow-hidden rounded-full">
+                <img alt="Marcus" class="w-full h-full object-cover"
+                  data-alt="Professional man in a colorful party setting" src="Screenshot 2026-03-12 211743.png" />
+              </div>
+            </div>
+            <h4 class="text-xl font-bold">Marcus Joy</h4>
+            <p class="text-primary font-semibold text-sm">Chief Sparkle Officer</p>
+          </div>
+          <!-- Team Member 3 -->
+          <div class="flex flex-col items-center group">
+            <div class="relative size-48 mb-6">
+              <div class="absolute inset-0 bg-pastel-teal rounded-full group-hover:scale-110 transition-transform">
+              </div>
+              <div class="absolute inset-2 overflow-hidden rounded-full">
+                <img alt="Sarah" class="w-full h-full object-cover"
+                  data-alt="Young woman laughing with confetti in hair" src="Screenshot 2026-03-12 211743.png" />
+              </div>
+            </div>
+            <h4 class="text-xl font-bold">Sarah Streamer</h4>
+            <p class="text-primary font-semibold text-sm">Vibe Architect</p>
+          </div>
+          <!-- Team Member 4 -->
+          <div class="flex flex-col items-center group">
+            <div class="relative size-48 mb-6">
+              <div class="absolute inset-0 bg-pastel-lavender rounded-full group-hover:scale-110 transition-transform">
+              </div>
+              <div class="absolute inset-2 overflow-hidden rounded-full">
+                <img alt="Leo" class="w-full h-full object-cover" data-alt="Creative man holding a bundle of balloons"
+                  src="Screenshot 2026-03-12 211743.png" />
+              </div>
+            </div>
+            <h4 class="text-xl font-bold">Leo Light</h4>
+            <p class="text-primary font-semibold text-sm">Balloon Maestro</p>
+          </div>
+        </div>
+      </section>
+      <!-- Our Values -->
+      <section class="max-w-7xl mx-auto px-10 py-24">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-black mb-4">Our Values</h2>
+          <p class="text-slate-500">What makes our heart beat.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Value 1 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-10 rounded-xl shadow-xl hover:-translate-y-2 transition-transform border border-slate-100 dark:border-slate-700">
+            <div class="size-16 bg-pastel-pink rounded-full flex items-center justify-center mb-8">
+              <span class="material-symbols-outlined text-pink-600 text-3xl">celebration</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Unbridled Joy</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">We believe every milestone, big or small,
+              deserves a moment of pure, unadulterated happiness.</p>
+          </div>
+          <!-- Value 2 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-10 rounded-xl shadow-xl hover:-translate-y-2 transition-transform border border-slate-100 dark:border-slate-700">
+            <div class="size-16 bg-pastel-teal rounded-full flex items-center justify-center mb-8">
+              <span class="material-symbols-outlined text-teal-600 text-3xl">eco</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Sustainable Fun</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Committed to using biodegradable balloons and
+              eco-friendly confetti because we love our planet.</p>
+          </div>
+          <!-- Value 3 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-10 rounded-xl shadow-xl hover:-translate-y-2 transition-transform border border-slate-100 dark:border-slate-700">
+            <div class="size-16 bg-pastel-lavender rounded-full flex items-center justify-center mb-8">
+              <span class="material-symbols-outlined text-indigo-600 text-3xl">auto_awesome</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Pure Creativity</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">No two parties are the same. We craft bespoke
+              experiences tailored to your wildest celebrations.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="bg-background-dark text-white pt-20 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent-pink to-accent-teal">
+        </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 sm:gap-20 relative z-10">
+          <div class="col-span-1 md:col-span-2 space-y-8">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+              <h2 class="text-3xl font-black tracking-tighter">CraftyOne ✨</h2>
+            </div>
+            <p class="text-slate-400 max-w-sm text-lg leading-relaxed font-medium">
+              Making your moments memorable since 2018. We believe every day is a reason to celebrate.
+            </p>
+            <div class="flex gap-6">
+              <a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110"
+                href="#">
+                <span class="material-symbols-outlined text-2xl">camera</span>
+              </a>
+              <a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-accent-pink hover:border-accent-pink transition-all hover:scale-110"
+                href="#">
+                <span class="material-symbols-outlined text-2xl">share</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Quick Links</h5>
+            <ul class="space-y-6 text-slate-400 font-bold">
+              <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="home.html">Home</a></li>
+              <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="products.html">Shop
+                  All</a></li>
+              <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="ourstory.html">Our
+                  Story</a></li>
+              <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="contactus.html">Contact
+                  Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Support</h5>
+            <ul class="space-y-6 text-slate-400 font-bold">
+              <li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="plans.html">Shipping
+                  Policy</a></li>
+              <li><a class="hover:text-accent-pink transition-colors flex items-center gap-2"
+                  href="terms.html">Returns</a></li>
+              <li><a class="hover:text-accent-pink transition-colors flex items-center gap-2"
+                  href="privacy.html">Privacy</a></li>
+              <li><a class="hover:text-accent-pink transition-colors flex items-center gap-2"
+                  href="terms.html">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 sm:mt-32 pt-10 sm:pt-12 border-t border-slate-800/50 text-center">
+          <p class="text-slate-500 font-bold uppercase tracking-widest text-xs"> 2024 CraftyOne. Stay sparkly &amp; keep
+            the party going! </p>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      if (!(target instanceof Element)) return;
+      var actionEl = target.closest('[data-action]');
+      if (!actionEl) return;
+      var action = actionEl.getAttribute('data-action');
+      if (action === 'share') {
+        e.preventDefault();
+        var shareData = { title: document.title, url: window.location.href };
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () { });
+        } else {
+          window.prompt('Copy link:', window.location.href);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

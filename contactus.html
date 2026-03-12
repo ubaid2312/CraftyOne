@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CraftyOne | Get in Touch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecda",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "lavender-accent": "#e0d7f7",
+                        "lavender-icon": "#8b5cf6",
+                        "pink-accent": "#ff71cf"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .sticker-border {
+            border: 8px solid white;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .bunting-flag {
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+ <!-- Top Navigation -->
+ <nav class="sticky top-0 z-50 w-full bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-primary/20 px-6 py-4">
+ <div class="max-w-7xl mx-auto flex items-center justify-between">
+ <div class="hidden lg:flex items-center gap-3">
+ <a data-action="share" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">share</span></a>
+ <a class="w-10 h-10 flex items-center justify-center rounded-full bg-accent-pink/20 hover:bg-accent-pink transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">photo_camera</span></a>
+ </div>
+ <div class="flex flex-col items-center gap-1">
+ <div class="flex items-center gap-2">
+ <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+ <h1 class="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">CraftyOne ✨</h1>
+ </div>
+ <div class="hidden md:flex items-center gap-8">
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="home.html">Home</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="about.html">About</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="contactus.html">Contact</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="products.html">Products</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="plans.html">Plans</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="reviews.html">Reviews</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="extra.html">Our Goal</a>
+ </div>
+ </div>
+ <div class="flex items-center gap-3">
+ <button onclick="window.location.href='cart.html'" class="flex items-center gap-2 px-6 py-2 rounded-full btn-3d-primary text-slate-900 font-bold">
+ <span class="material-symbols-outlined">shopping_bag</span>
+ <span class="hidden sm:inline">Cart</span>
+ </button>
+ <button onclick="window.location.href='about.html'" class="flex items-center gap-2 px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold border-b-4 border-slate-200 shadow-sm active:border-b-0 active:translate-y-[2px]">
+ <span class="material-symbols-outlined">person</span>
+ </button>
+ </div>
+ </div>
+ </nav>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-6 py-12 lg:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Left Column: Contact Info -->
+<div class="space-y-10">
+<div>
+<h1 class="font-poppins text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-[1.1] mb-4">
+                            Contact <br/><span class="text-primary">Us</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg max-w-md">
+                            We can't wait to hear from you! Let's make your next celebration absolutely legendary.
+                        </p>
+</div>
+<div class="space-y-6">
+<!-- Contact Items -->
+<div class="flex items-center gap-5 p-4 rounded-xl bg-white dark:bg-slate-800/50 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-center rounded-lg bg-lavender-accent text-lavender-icon shrink-0 size-14">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Email Us</p>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">hello@craftyone.com</p>
+</div>
+</div>
+<div class="flex items-center gap-5 p-4 rounded-xl bg-white dark:bg-slate-800/50 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-center rounded-lg bg-lavender-accent text-lavender-icon shrink-0 size-14">
+<span class="material-symbols-outlined text-3xl">call</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Call Us</p>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">+1 (555) 123-4567</p>
+</div>
+</div>
+<div class="flex items-center gap-5 p-4 rounded-xl bg-white dark:bg-slate-800/50 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-center rounded-lg bg-lavender-accent text-lavender-icon shrink-0 size-14">
+<span class="material-symbols-outlined text-3xl">location_on</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Studio Address</p>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">123 Celebration Way, Festive City</p>
+</div>
+</div>
+</div>
+<!-- Map Container -->
+<div class="relative w-full h-64 rounded-xl overflow-hidden border-4 border-white shadow-lg">
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 grayscale" data-alt="Modern minimalist city map view of Festive City" data-location="Festive City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaxm2kn4r6T7mI3x-HVTRepWdQ0B3PD3tqshiA2laKVhY6Vx9RwyGMFL8ncvVSJFizNlupAhXt2ARH1lc6RrMUwoCiwG4tfDk0XSxVmU9Hpb1Kjtq-cHrHOxrcXqHILHi9Cr1WRMTISw_32AqxBmvqS5GAgXdlKTjcqDfMZdjwv0AuN2MO4UYLVZqTzX1GRdV5wRnY3wmdILu0XLUBc0mJK4BezTIQs5ZqO--VXMUrCZzVE6Jv9HLvO2BUQiBGBIxIbpVcXkVspeQ"/>
+<!-- Custom Pin -->
+<div class="absolute z-10 flex flex-col items-center">
+<div class="bg-pink-accent text-white p-2 rounded-full shadow-xl animate-bounce">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div class="w-2 h-1 bg-black/20 rounded-full blur-[2px]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Inquiry Form -->
+<div class="relative pt-12">
+<!-- Bunting Decoration -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] flex justify-center gap-1 z-10">
+<div class="w-8 h-10 bg-primary bunting-flag"></div>
+<div class="w-8 h-10 bg-pink-accent bunting-flag"></div>
+<div class="w-8 h-10 bg-lavender-icon bunting-flag"></div>
+<div class="w-8 h-10 bg-primary bunting-flag"></div>
+<div class="w-8 h-10 bg-pink-accent bunting-flag"></div>
+<div class="w-8 h-10 bg-lavender-icon bunting-flag"></div>
+</div>
+<div class="sticker-border bg-slate-50 dark:bg-slate-900 rounded-lg p-8 lg:p-10 relative">
+<h2 class="font-poppins text-3xl text-slate-900 dark:text-white mb-8 text-center">Party Inquiry Form</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Your Name</label>
+<input class="w-full rounded-full border-none bg-white dark:bg-slate-800 px-6 py-3 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary shadow-sm" placeholder="Magic Maker" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Event Date</label>
+<input class="w-full rounded-full border-none bg-white dark:bg-slate-800 px-6 py-3 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary shadow-sm" type="date"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Event Type</label>
+<select class="w-full rounded-full border-none bg-white dark:bg-slate-800 px-6 py-3 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary shadow-sm appearance-none">
+<option>Birthday</option>
+<option>Wedding</option>
+<option>Corporate</option>
+<option>Other Wild Celebration</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Tell us your wildest party dreams</label>
+<textarea class="w-full rounded-xl border-none bg-white dark:bg-slate-800 px-6 py-4 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary shadow-sm resize-none" placeholder="Think unicorns, disco balls, and unlimited cake..." rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-slate-900 font-bold text-lg py-4 rounded-full shadow-lg hover:shadow-primary/30 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center gap-2" type="submit">
+<span>Send Magic</span>
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Decorative sticker-style element -->
+<div class="absolute -bottom-6 -right-6 hidden lg:block rotate-12">
+<div class="sticker-border bg-pink-accent text-white font-poppins px-6 py-2 rounded-full text-sm font-bold shadow-xl">
+                            LET'S PARTY! 🎈
+                        </div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-background-dark text-white pt-20 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent-pink to-accent-teal"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 sm:gap-20 relative z-10">
+<div class="col-span-1 md:col-span-2 space-y-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+<h2 class="text-3xl font-black tracking-tighter">CraftyOne ✨</h2>
+</div>
+<p class="text-slate-400 max-w-sm text-lg leading-relaxed font-medium">
+                Making your moments memorable since 2018. We believe every day is a reason to celebrate.
+            </p>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">camera</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-accent-pink hover:border-accent-pink transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">share</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Quick Links</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="home.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="products.html">Shop All</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="ourstory.html">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="contactus.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Support</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="plans.html">Shipping Policy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Returns</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="privacy.html">Privacy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 sm:mt-32 pt-10 sm:pt-12 border-t border-slate-800/50 text-center">
+<p class="text-slate-500 font-bold uppercase tracking-widest text-xs"> 2024 CraftyOne. Stay sparkly &amp; keep the party going! </p>
+</div>
+</footer>
+</div>
+  <script>
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      if (!(target instanceof Element)) return;
+      var actionEl = target.closest('[data-action]');
+      if (!actionEl) return;
+      var action = actionEl.getAttribute('data-action');
+      if (action === 'share') {
+        e.preventDefault();
+        var shareData = { title: document.title, url: window.location.href };
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () {});
+        } else {
+          window.prompt('Copy link:', window.location.href);
+        }
+      }
+    });
+  </script>
+</body></html>

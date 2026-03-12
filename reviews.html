@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13daec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102022",
+                        "lavender-accent": "#C4B5FD"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.wavy-bg {
+    background-color: #C4B5FD;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCUAvzT9uu7F-WBYH9wOGY3c9NonKZNJ9g1zolqXJqauzlyqmDwBu_3xvqHzc7LWbrQYHp4wXbxrB7dpl69TD7IisHpWjUkLyw5HwjIYjKs9RwWkcE1VVWrfr00O7vVCsJEeInoWSjOtzYvnBXV-uXbLSk6T4ayCyu2eRKVa0gh66XJrmMqjx63k0uEO-nndBkJMJPIVofBL9cruecv8pBKX3BdEmUlR6FXRs8nVRH7x4YpQx5bYvkuvxqo-huWvWjMMIKxsSKi3Ug);
+    /* Using a subtle pattern for the wavy feel */
+    background-attachment: fixed
+    }
+.polaroid {
+    background: white;
+    padding: 1rem 1rem 3rem 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: rotate(calc(var(--rotation) * 1deg));
+    transition: transform 0.3s ease
+    }
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 wavy-bg">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+ <!-- Top Navigation -->
+ <nav class="sticky top-0 z-50 w-full bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-primary/20 px-6 py-4">
+ <div class="max-w-7xl mx-auto flex items-center justify-between">
+ <div class="hidden lg:flex items-center gap-3">
+ <a data-action="share" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">share</span></a>
+ <a class="w-10 h-10 flex items-center justify-center rounded-full bg-accent-pink/20 hover:bg-accent-pink transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">photo_camera</span></a>
+ </div>
+ <div class="flex flex-col items-center gap-1">
+ <div class="flex items-center gap-2">
+ <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+ <h1 class="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">CraftyOne ✨</h1>
+ </div>
+ <div class="hidden md:flex items-center gap-8">
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="home.html">Home</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="about.html">About</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="contactus.html">Contact</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="products.html">Products</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="plans.html">Plans</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="reviews.html">Reviews</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="extra.html">Our Goal</a>
+ </div>
+ </div>
+ <div class="flex items-center gap-3">
+ <button onclick="window.location.href='cart.html'" class="flex items-center gap-2 px-6 py-2 rounded-full btn-3d-primary text-slate-900 font-bold">
+ <span class="material-symbols-outlined">shopping_bag</span>
+ <span class="hidden sm:inline">Cart</span>
+ </button>
+ <button onclick="window.location.href='about.html'" class="flex items-center gap-2 px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold border-b-4 border-slate-200 shadow-sm active:border-b-0 active:translate-y-[2px]">
+ <span class="material-symbols-outlined">person</span>
+ </button>
+ </div>
+ </div>
+ </nav>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-6 py-12">
+<!-- Hero Section -->
+<section class="flex flex-col items-center justify-center text-center py-16 mb-12">
+<div class="bg-white/90 backdrop-blur-sm p-12 rounded-xl shadow-2xl border border-white/50 max-w-2xl w-full">
+<h1 class="text-slate-900 text-6xl font-black leading-tight mb-4">CraftyOne People Say</h1>
+<div class="flex justify-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-5xl fill-1">star</span>
+<span class="material-symbols-outlined text-primary text-5xl fill-1">star</span>
+<span class="material-symbols-outlined text-primary text-5xl fill-1">star</span>
+<span class="material-symbols-outlined text-primary text-5xl fill-1">star</span>
+<span class="material-symbols-outlined text-primary text-5xl fill-1">star</span>
+</div>
+<div class="space-y-2">
+<p class="text-4xl font-bold text-slate-900">5.0 Stars</p>
+<p class="text-xl font-medium text-slate-600">Over 500 Happy Hosts</p>
+</div>
+</div>
+</section>
+<!-- Testimonial Grid (Masonry effect using columns) -->
+<section class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8 mb-24 px-4 overflow-hidden">
+<!-- Polaroid Card 1 -->
+<div class="polaroid break-inside-avoid" style="--rotation: -2">
+<img class="w-full aspect-square object-cover mb-4 rounded-sm border border-slate-100" data-alt="Joyful group of friends laughing at a party" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd11tvH7TBRxz-Ph5nnhXTzE1c_hz3hMngazXzwfJjpXWw4wHtPK8hkLzXFPdUKvonzOSatb9jij-KbbGzxui19j5Ocjkv0RUcCMFs7JHbO8ZXTls4J8H5RnG2c1rvEZAdeOR3OQny1skhPF6VOGG0kvHMS7_K6EONcm2-U1DJouKni9Y6FyqjyavYFQOtmZO0hpxVSPkWIZleCelr6P446RImGwqe5_tx-BFX6wTpFeU5wblf8Xh4YrP4CthbmSj95Sp7b3iXacA"/>
+<p class="text-slate-800 font-medium italic text-lg leading-relaxed">"Best party ever! The energy was incredible and the decorations were spot on."</p>
+<p class="text-slate-400 text-sm mt-4 font-bold">— Sarah J.</p>
+</div>
+<!-- Polaroid Card 2 -->
+<div class="polaroid break-inside-avoid" style="--rotation: 3">
+<img class="w-full aspect-[3/4] object-cover mb-4 rounded-sm border border-slate-100" data-alt="Colorful birthday party setup with balloons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuwZWFv6eGhPNlJ2XPfP8JmXvapj_lAgXLIUL-AXNgr4Jr5_D572lvM2lH4fJwLKcsRYzMdIQbSX9lc7P6A4KT84FAOU-obCFloiAirU1iokYg31Wd6-X94ILXiOjx0N__1exaa1hvkRt2Hwx4SKX2frHXxodl7XxzvEF0waDNw6cIDiUq3QgaTsGBIRoJlX-dLzhzx9qSx29w6SWYn9ENnZudejCHG4oCGFuIsC1dzjnfswJn2g4YP1zOP7tWqUlX8P0wBHO5s_c"/>
+<p class="text-slate-800 font-medium italic text-lg leading-relaxed">"So much fun! My kids didn't want the night to end. Highly recommend CraftyOne."</p>
+<p class="text-slate-400 text-sm mt-4 font-bold">— The Miller Family</p>
+</div>
+<!-- Polaroid Card 3 -->
+<div class="polaroid break-inside-avoid" style="--rotation: -1">
+<img class="w-full aspect-square object-cover mb-4 rounded-sm border border-slate-100" data-alt="Elegant dinner party with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3cIo6WxyLxAJ89cpDoxqR-Ww6PeaG2MM7HXwX891elz_Xml7C9bf-Ofv3tqqhBT9oTwHXK1pMytrmE9P_1Ee7idw7OjbVCyFzBJFpLhgRWjHn7UpFg7Sf1oBdzghOV9ZfWkpNMBRnjkCukuvfrRw1uu-i6fb64U5xfQOZwQtEfdB_Koo2zQ8GYR6gGyl3NvO1tGHXdVfZzWAtrWVvRRRjxn_vT0KiB9mBooGt5AZQRZm4Bj1VA-MsArtdUnVu1E0OtOXz99Ub3uw"/>
+<p class="text-slate-800 font-medium italic text-lg leading-relaxed">"Amazing service from start to finish. They handled everything perfectly."</p>
+<p class="text-slate-400 text-sm mt-4 font-bold">— David R.</p>
+</div>
+<!-- Polaroid Card 4 -->
+<div class="polaroid break-inside-avoid" style="--rotation: 2">
+<img class="w-full aspect-[4/5] object-cover mb-4 rounded-sm border border-slate-100" data-alt="Dance floor with vibrant neon lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCdKGYgGr1uh_eCMchX-cE2KLJR8pB9bpXWVgOASn85tGHmiUe-qzHEfYSlovxGBi3zH8wKS2BrkOPchJt3rV70fPIfahVYQG99LBlLhqwOdhLnAHh3vLyIhez3sehYCLdR5dUf6frvaKhe8kiBC91MegHGH3npgZLG3dDmK7bQhFDnu8UdjCeWxSMs26py59KV9KeqX635IJJANm4WXz_0r16v7aiA2Sugj45DJAjQWhkD3JoG0cfXO47XF-aM4rbrBuL02c-pCQ"/>
+<p class="text-slate-800 font-medium italic text-lg leading-relaxed">"Unforgettable night. The music and vibes were exactly what we wanted."</p>
+<p class="text-slate-400 text-sm mt-4 font-bold">— Marcus K.</p>
+</div>
+<!-- Polaroid Card 5 -->
+<div class="polaroid break-inside-avoid" style="--rotation: -3">
+<img class="w-full aspect-square object-cover mb-4 rounded-sm border border-slate-100" data-alt="Group of colleagues at a corporate event" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD11hDZWSiUGQ665wOHFft9iZTkWirkTHM1ZQjrkkcr4ctLtHFuMPKuCkKinf77U-_9eVz6lQVit7KZZcADH_pGSPlGUe_l06xeO1OBX01qVbDOdhxY9o_JE7nM6rbfFWOJJLHZOAx5kBTH_XGb9e8F_4w1TgvbRpiCPrmv7DK4hHr6qtzJ9pFj6Xwnx3lqF092FQJKpYOf8UlBns2M7-QMOWh3cIcfGO05NCrx6L8aaygezxjrMx5N6LYG5kNvq5xG2SEP6WHdPVc"/>
+<p class="text-slate-800 font-medium italic text-lg leading-relaxed">"The team at CraftyOne are absolute professionals. 10/10 experience!"</p>
+<p class="text-slate-400 text-sm mt-4 font-bold">— Elena W.</p>
+</div>
+<!-- Polaroid Card 6 -->
+<div class="polaroid break-inside-avoid" style="--rotation: 1">
+<img class="w-full aspect-[3/4] object-cover mb-4 rounded-sm border border-slate-100" data-alt="Close up of party confetti and cocktails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf2-K8WzBvOD0_pUswU0_LhR3u84j3DxjMH769CEduWE0NPkgPqhelbE4n9Yg8r1zzsOoQ22zcwadnhMRV3BnAWOqWj9-rqhvvKUcgB_wz_hv_pmoYBgM3mYCeyaZVjAa2aSbRrychjW9-jPZ789dH-JOmQeU-O7bdMiVBewKYkiLhV3Xe7PwNe4R9aJsr-yV2rcYsrc-4iezXXCTYot0GOoewnF19GS5HrB-RIRyUDOPEhtrkzS1ww5eXm1KZTBkn7oj4u4r4sgw"/>
+<p class="text-slate-800 font-medium italic text-lg leading-relaxed">"Loved every second of it. We will definitely be booking again next year!"</p>
+<p class="text-slate-400 text-sm mt-4 font-bold">— Chris &amp; Lou</p>
+</div>
+</section>
+<!-- As Seen On Section -->
+<section class="bg-white/60 backdrop-blur-sm rounded-xl p-12 mb-24">
+<h3 class="text-slate-900 text-2xl font-bold text-center mb-10 tracking-tight">As Seen On</h3>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale opacity-60">
+<div class="flex items-center gap-2 font-black text-2xl tracking-tighter">LOCAL MAG</div>
+<div class="flex items-center gap-2 font-bold text-xl italic">The Blog</div>
+<div class="flex items-center gap-2 font-serif text-2xl">City Times</div>
+<div class="flex items-center gap-2 font-mono font-bold text-lg">Event Guide</div>
+<div class="flex items-center gap-2 font-bold text-2xl uppercase tracking-widest">Party Hub</div>
+</div>
+</section>
+<!-- Share Your Story Section -->
+<section class="flex flex-col items-center justify-center text-center pb-24">
+<div class="max-w-xl">
+<h2 class="text-slate-900 text-4xl font-extrabold mb-4">Share Your Story</h2>
+<p class="text-slate-700 text-lg mb-8">Had a blast at your CraftyOne event? We'd love to see your photos and hear your favorite moments!</p>
+<button class="group flex items-center gap-3 mx-auto min-w-[240px] cursor-pointer justify-center overflow-hidden rounded-xl h-16 px-8 bg-slate-900 text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-slate-800 transition-all shadow-xl">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">photo_camera</span>
+<span>Upload Photo</span>
+</button>
+<p class="text-slate-500 text-sm mt-4 italic">Format: JPG, PNG (Max 10MB)</p>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark text-white pt-20 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent-pink to-accent-teal"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 sm:gap-20 relative z-10">
+<div class="col-span-1 md:col-span-2 space-y-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+<h2 class="text-3xl font-black tracking-tighter">CraftyOne ✨</h2>
+</div>
+<p class="text-slate-400 max-w-sm text-lg leading-relaxed font-medium">
+                Making your moments memorable since 2018. We believe every day is a reason to celebrate.
+            </p>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">camera</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-accent-pink hover:border-accent-pink transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">share</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Quick Links</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="home.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="products.html">Shop All</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="ourstory.html">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="contactus.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Support</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="plans.html">Shipping Policy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Returns</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="privacy.html">Privacy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 sm:mt-32 pt-10 sm:pt-12 border-t border-slate-800/50 text-center">
+<p class="text-slate-500 font-bold uppercase tracking-widest text-xs"> 2024 CraftyOne. Stay sparkly &amp; keep the party going! </p>
+</div>
+</footer>
+</div>
+</div>
+  <script>
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      if (!(target instanceof Element)) return;
+      var actionEl = target.closest('[data-action]');
+      if (!actionEl) return;
+      var action = actionEl.getAttribute('data-action');
+      if (action === 'share') {
+        e.preventDefault();
+        var shareData = { title: document.title, url: window.location.href };
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () {});
+        } else {
+          window.prompt('Copy link:', window.location.href);
+        }
+      }
+    });
+  </script>
+</body></html>

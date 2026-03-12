@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CraftyOne Homepage Variant 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#C4B5FD",
+                        "accent-pink": "#F9A8D4",
+                        "accent-teal": "#5EEAD4",
+                        "cream": "#FFF7ED",
+                        "background-light": "#F6F5F8",
+                        "background-dark": "#130F23",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .confetti-bg-v2 {
+                background-image: 
+                    radial-gradient(circle, #C4B5FD 2px, transparent 2px),
+                    radial-gradient(circle, #F9A8D4 4px, transparent 4px),
+                    radial-gradient(circle, #5EEAD4 1.5px, transparent 1.5px);
+                background-size: 60px 60px, 80px 80px, 40px 40px;
+                background-position: 0 0, 30px 30px, 15px 10px;
+                background-color: #FFF7ED;
+            }
+            .sticker-border {
+                @apply border-[6px] border-white shadow-[0_15px_35px_rgba(0,0,0,0.15)];
+            }
+            .btn-3d-primary {
+                @apply bg-primary border-b-4 border-[#9d8ce8] active:border-b-0 active:translate-y-[2px] transition-all;
+            }
+            .btn-3d-teal {
+                @apply bg-accent-teal border-b-4 border-[#3ecfbb] active:border-b-0 active:translate-y-[2px] transition-all;
+            }
+            .btn-3d-pink {
+                @apply bg-accent-pink border-b-4 border-[#e889bb] active:border-b-0 active:translate-y-[2px] transition-all;
+            }
+            .organic-shape {
+                filter: blur(40px);
+                opacity: 0.4;
+            }
+            .retro-wave {
+                background: repeating-linear-gradient(
+                    45deg,
+                    #C4B5FD,
+                    #C4B5FD 20px,
+                    #F9A8D4 20px,
+                    #F9A8D4 40px,
+                    #5EEAD4 40px,
+                    #5EEAD4 60px,
+                    #FFF7ED 60px,
+                    #FFF7ED 80px
+                );
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23000' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,176C960,192,1056,192,1152,170.7C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+                mask-size: cover;
+                mask-repeat: no-repeat;
+            }
+
+            .section-padding {
+                @apply py-16 sm:py-24 lg:py-[120px];
+            }
+
+            .floating-element {
+                @apply absolute pointer-events-none z-0 opacity-20;
+            }
+
+            @keyframes craftyone-marquee-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+
+            @keyframes craftyone-marquee-right {
+                0% { transform: translateX(-50%); }
+                100% { transform: translateX(0); }
+            }
+
+            .craftyone-marquee {
+                overflow: hidden;
+                position: relative;
+            }
+
+            .craftyone-marquee-track {
+                display: flex;
+                width: max-content;
+                will-change: transform;
+                gap: 18px !important;
+            }
+
+            .craftyone-marquee .sticker-border {
+                border-width: 1px !important;
+                border-color: rgb(226 232 240) !important;
+                box-shadow: none !important;
+            }
+
+            .craftyone-marquee [class*="rounded-[3rem]"] {
+                border-radius: 24px !important;
+            }
+
+            .craftyone-marquee .p-10 {
+                padding: 22px !important;
+            }
+
+            .craftyone-marquee-left .craftyone-marquee-track {
+                animation: craftyone-marquee-left 28s linear infinite;
+            }
+
+            .craftyone-marquee-right .craftyone-marquee-track {
+                animation: craftyone-marquee-right 28s linear infinite;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .craftyone-marquee-left .craftyone-marquee-track,
+                .craftyone-marquee-right .craftyone-marquee-track {
+                    animation: none;
+                    transform: translateX(0);
+                }
+            }
+
+            .craftyone-story {
+                position: relative;
+            }
+
+            .craftyone-story-card {
+                border: 1px solid rgb(226 232 240);
+                box-shadow: none;
+                border-radius: 24px;
+                background: white;
+            }
+
+            .craftyone-story-step {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: opacity 500ms ease, transform 500ms ease;
+            }
+
+            .craftyone-story-step.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .craftyone-story-track {
+                position: relative;
+                width: 64px;
+                height: 100%;
+                min-height: 520px;
+            }
+
+            .craftyone-story-line {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                transform: translateX(-50%);
+                background: rgb(226 232 240);
+            }
+
+            .craftyone-story-arrow {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 44px;
+                height: 44px;
+                border-radius: 9999px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                border: 1px solid rgb(226 232 240);
+                box-shadow: none;
+            }
+
+            .craftyone-story-arrow > span {
+                color: rgb(100 116 139);
+                font-variation-settings: 'FILL' 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary rounded-full organic-shape"></div>
+<div class="absolute top-[20%] right-[-10%] w-[35%] h-[35%] bg-accent-pink rounded-full organic-shape"></div>
+<div class="absolute bottom-[10%] left-[5%] w-[30%] h-[30%] bg-accent-teal rounded-full organic-shape opacity-20"></div>
+<div class="absolute top-[50%] left-[40%] w-[20%] h-[20%] bg-primary rounded-full organic-shape"></div>
+</div>
+ <!-- Top Navigation -->
+ <nav class="sticky top-0 z-50 w-full bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-primary/20 px-6 py-4">
+ <div class="max-w-7xl mx-auto flex items-center justify-between">
+ <div class="hidden lg:flex items-center gap-3">
+ <a data-action="share" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">share</span></a>
+ <a class="w-10 h-10 flex items-center justify-center rounded-full bg-accent-pink/20 hover:bg-accent-pink transition-colors group" href="joyparty.html"><span class="material-symbols-outlined text-slate-900 text-xl">photo_camera</span></a>
+ </div>
+ <div class="flex flex-col items-center gap-1">
+ <div class="flex items-center gap-2">
+ <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+ <h1 class="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">CraftyOne ✨</h1>
+ </div>
+ <div class="hidden md:flex items-center gap-8">
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="home.html">Home</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="about.html">About</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="contactus.html">Contact</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="products.html">Products</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="plans.html">Plans</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="reviews.html">Reviews</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="extra.html">Our Goal</a>
+ </div>
+ </div>
+ <div class="flex items-center gap-3">
+ <button onclick="window.location.href='cart.html'" class="flex items-center gap-2 px-6 py-2 rounded-full btn-3d-primary text-slate-900 font-bold">
+ <span class="material-symbols-outlined">shopping_bag</span>
+ <span class="hidden sm:inline">Cart</span>
+ </button>
+ <button onclick="window.location.href='about.html'" class="flex items-center gap-2 px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold border-b-4 border-slate-200 shadow-sm active:border-b-0 active:translate-y-[2px]">
+ <span class="material-symbols-outlined">person</span>
+ </button>
+ </div>
+ </div>
+ </nav>
+<header class="confetti-bg-v2 min-h-[90vh] flex items-center px-4 sm:px-6 py-12 lg:py-24 relative overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-block px-4 py-1 rounded-full bg-white border-2 border-primary text-primary font-black text-sm uppercase tracking-widest mb-4">
+                🎉 Let's Celebrate
+            </div>
+<h2 class="text-4xl sm:text-5xl lg:text-8xl font-black text-slate-900 leading-[0.95] lg:leading-[0.9] tracking-tighter">
+                Get your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-pink">party on</span> with us
+            </h2>
+<p class="text-lg sm:text-xl text-slate-700 max-w-lg leading-relaxed font-medium">
+                Everything you need for the ultimate celebration, from bespoke cakes and organic balloon arches to DIY party kits.
+            </p>
+<div class="flex flex-wrap gap-6">
+<button onclick="window.location.href='products.html'" class="px-10 sm:px-12 py-4 sm:py-5 rounded-full btn-3d-primary text-slate-900 font-black text-lg sm:text-xl hover:scale-105">
+                    Shop Now
+                </button>
+<button onclick="window.location.href='plans.html'" class="px-10 sm:px-12 py-4 sm:py-5 rounded-full btn-3d-teal text-slate-900 font-black text-lg sm:text-xl hover:scale-105">
+                    Our Services
+                </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-[120%] h-[120%] retro-wave opacity-40 -z-10 rotate-3 scale-110"></div>
+<div class="absolute -top-12 -left-8 z-20 animate-bounce duration-[3000ms]">
+<div class="sticker-border bg-white rounded-2xl p-4 rotate-[-12deg] w-24 h-24 overflow-hidden">
+<img alt="Cake Sticker" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkQotrGTcCN65Zx1B8N-gyJsq8GuhycDjZur5N219AO5RARJcYZ_55iHEW_7qqEMnens8IWCAneuq5D5-aloEVr4f-tORw6AxTc1VBIcyGJdDRe6kuSVZIxoARDrKuQPreV44ClqxN5d4XKTbmXj2w3kdFzqEJV5HkN400CHpv-DqL84QRsMG2FEd-jK4GxBvXlPzXwrmbrbr_tpG6-O_-NGj_TtDXR59KpfD0hF2FghFtoh7Q13Vf7rh6_wTBA8ziFST_fsxodFs"/>
+</div>
+</div>
+<div class="absolute bottom-[-20px] -right-8 z-20">
+<div class="sticker-border bg-white rounded-full p-4 rotate-[15deg] w-32 h-32 overflow-hidden flex items-center justify-center">
+<img alt="Balloon Sticker" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeuFb9ele88QRzh3XYeA_NnjSKh4FMUSq7HTFn0_9iA95LNm3kt2ry-PKZNxeaJM56RaDyKWWqi2pSK35ewkQ86df09P5aoOtLak0M-fAbGfcVdc8djsVVEL5IYkeJ0ClhVj7ukSXxb93ffyMoQjQWNCplvgcGcxAfKZj519wXfXkmKkGHuYX56HXrbx8wmBK5IIY6NKaEjDeSx7AbCeBrItbiZ6KrQv7UE_bgFSa2iLM63FE8XZMbwdNGFbqaCIe3j_nN2X7NXs0"/>
+</div>
+</div>
+<div class="absolute top-[20%] right-[-40px] z-20">
+<span class="material-symbols-outlined text-6xl text-accent-pink drop-shadow-lg">star</span>
+</div>
+<div class="absolute -bottom-10 left-10 z-20">
+<span class="material-symbols-outlined text-5xl text-accent-teal drop-shadow-lg">celebration</span>
+</div>
+<div class="relative z-10 bg-white p-6 pt-6 pb-12 rounded-lg rotate-3 shadow-[20px_20px_0px_0px_rgba(195,180,253,0.3)] border-2 border-slate-50 max-w-md mx-auto">
+<div class="aspect-[4/5] bg-slate-100 rounded overflow-hidden mb-6">
+<img alt="Kids birthday party" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1g55KU9VlWxbX8hHMaQo8Ttffg-ZfYCyoxOVOQQqDDkJO70iahFFahEAaChxPWKVK1CNqInp3EzkNVU43PBZ22DYnb4wdGnuFo5rYW41F7K-hF9GoOgnziragc-4713igz_pp0IvGRPZMuBwodjRE_HSW9s7mHURQhj2QrwczDYm1AjJsg9mZtOMOj-0hx4CTMmysxk1yk_IrwWqxVryCP7rfG3-miUkz9M4BqaJ077vALnkSqQjhbBILjkP0p9XcF5idQZ-t-W0"/>
+</div>
+<div class="text-center">
+<p class="font-display text-2xl font-black text-slate-800 tracking-tight">Party Goals 2024 ✨</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="bg-white dark:bg-background-dark py-16 sm:py-24 px-4 sm:px-6 overflow-hidden relative">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-8 mb-12 sm:mb-16 relative z-10">
+<div>
+<span class="text-accent-pink font-black uppercase tracking-[0.3em] text-sm flex items-center gap-2">
+<span class="w-8 h-[2px] bg-accent-pink"></span> Most Loved
+                </span>
+<h3 class="text-5xl lg:text-6xl font-black mt-4 tracking-tighter">Our Best Sellers</h3>
+</div>
+<div class="flex gap-4">
+<button class="w-14 h-14 rounded-full border-4 border-slate-100 flex items-center justify-center hover:bg-primary transition-all active:scale-95 bg-white">
+<span class="material-symbols-outlined font-black">arrow_back</span>
+</button>
+<button class="w-14 h-14 rounded-full border-4 border-slate-100 flex items-center justify-center hover:bg-primary transition-all active:scale-95 bg-white">
+<span class="material-symbols-outlined font-black">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+<div onclick="window.location.href='products.html'" class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 sticker-border transform group-hover:-rotate-2 transition-transform duration-300">
+<img alt="Signature Cake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRNkhpL4EmDH8WdO_rhnF1vBhcT9RLM-0BiFIPj155cGUPOrJpD3hG_7NwkwG-lY2SWKTKeqGUW2fh7SFBD9Mv55TYyVX9XRb-TIwoT9uYF-NnSs7k-lYssuRLLx-ulQrI7CTA3PszdJI2iWvDjPBzeM0CGVqPFR5VxJUVkuZ3NthKCzN2OAiQCXzd-2ffdtYjsJCoRDA3EbE95VVnGd4vXQJMCGCz4rPuuJdzLpuexn16G9ulKfUClQCMGJKCpHfAfBlm2bHJtoo"/>
+<div class="absolute top-6 left-6 bg-accent-teal text-slate-900 text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest border-b-2 border-[#3ecfbb]">Best Seller</div>
+</div>
+<div class="px-2">
+<h4 class="text-2xl font-black tracking-tight">Signature Cake</h4>
+<p class="text-primary text-xl font-black mt-1">$45.00</p>
+</div>
+</div>
+<div onclick="window.location.href='products.html'" class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 sticker-border transform group-hover:rotate-2 transition-transform duration-300">
+<img alt="Balloon Bundle" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeuFb9ele88QRzh3XYeA_NnjSKh4FMUSq7HTFn0_9iA95LNm3kt2ry-PKZNxeaJM56RaDyKWWqi2pSK35ewkQ86df09P5aoOtLak0M-fAbGfcVdc8djsVVEL5IYkeJ0ClhVj7ukSXxb93ffyMoQjQWNCplvgcGcxAfKZj519wXfXkmKkGHuYX56HXrbx8wmBK5IIY6NKaEjDeSx7AbCeBrItbiZ6KrQv7UE_bgFSa2iLM63FE8XZMbwdNGFbqaCIe3j_nN2X7NXs0"/>
+</div>
+<div class="px-2">
+<h4 class="text-2xl font-black tracking-tight">Balloon Bundle</h4>
+<p class="text-primary text-xl font-black mt-1">$30.00</p>
+</div>
+</div>
+<div onclick="window.location.href='products.html'" class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 sticker-border transform group-hover:-rotate-2 transition-transform duration-300">
+<img alt="Magic Confetti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg9JkpCY6Ltas8j0zffc6UuaNb2C929xW1rA573H70_msowJMHfsI8J3sYg-VFo5R_dpKPe9dgX2_gY35JBvizXD4QS7iIyUFrhMP4vqfeGH0dYUo7kwLE2CI_GqmzmjfY1upWo8LOBC_SO481wQ_kaaiZsx-HHDAsMP5pMe-twtrTm7X4aDyEJg7wqK8X8YfXPM_U2HeLGBYctOOLtW6PY4-bKMaOkoSKPQLcf1XD9YaU4kqnlqFPlF0nCnCh2WJHbBV-GIGTpWM"/>
+</div>
+<div class="px-2">
+<h4 class="text-2xl font-black tracking-tight">Magic Confetti</h4>
+<p class="text-primary text-xl font-black mt-1">$12.00</p>
+</div>
+</div>
+<div onclick="window.location.href='products.html'" class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 sticker-border transform group-hover:rotate-2 transition-transform duration-300">
+<img alt="Full Party Kit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA20xxjAD02Yad2D8R4kpFo7V4C5jOqTWlagisjbTZUNMHyzI9lLPUdxR6HeIVTmh92aM_EFre2QskyOYr53avnr7ttoNLF0iK63n454NZJOdF2QkdwfLDcMwGvKFMJ51APhOQc_9oCgwORwkEXKyHOeiOncUcNHrQ1HOGCQ-E6hrepZqNIi1diOA-NTpL77Bn9B3kKfUgdu9UYBn_dkLOzFxfP4AwyRkFwy-SMnPlYtWBTnBeF5_-7ga2b5luHaNJ9mj3BcYTyaiE"/>
+</div>
+<div class="px-2">
+<h4 class="text-2xl font-black tracking-tight">Full Party Kit</h4>
+<p class="text-primary text-xl font-black mt-1">$65.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary/5 py-20 sm:py-28 lg:py-32 px-4 sm:px-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-[50%] h-full retro-wave opacity-10 -scale-x-100"></div>
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 sm:gap-20 items-center relative z-10">
+<div class="order-2 lg:order-1 relative">
+<div class="absolute -top-10 -right-4 z-20 rotate-12 bg-white px-6 py-2 rounded-full sticker-border font-black text-primary">
+                100% FUN
+            </div>
+<div class="bg-white p-8 rounded-2xl -rotate-3 sticker-border max-w-lg mx-auto lg:mx-0 relative">
+<div class="aspect-video bg-slate-100 rounded-xl overflow-hidden mb-8">
+<img alt="Event Planning" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1g55KU9VlWxbX8hHMaQo8Ttffg-ZfYCyoxOVOQQqDDkJO70iahFFahEAaChxPWKVK1CNqInp3EzkNVU43PBZ22DYnb4wdGnuFo5rYW41F7K-hF9GoOgnziragc-4713igz_pp0IvGRPZMuBwodjRE_HSW9s7mHURQhj2QrwczDYm1AjJsg9mZtOMOj-0hx4CTMmysxk1yk_IrwWqxVryCP7rfG3-miUkz9M4BqaJ077vALnkSqQjhbBILjkP0p9XcF5idQZ-t-W0"/>
+</div>
+<div class="text-center">
+<p class="font-display font-black text-slate-300 uppercase tracking-[0.5em] text-sm">Our Portfolio</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-10">
+<div>
+<span class="text-primary font-black uppercase tracking-[0.3em] text-sm">We Plan, You Party</span>
+<h3 class="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 leading-[1.15] mt-4 tracking-tighter">Event Planning Made Easy</h3>
+</div>
+<p class="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium">
+                From intimate backyard birthdays to grand wedding celebrations, our expert team takes the stress out of planning. We handle everything from vendor management to custom decor setups.
+            </p>
+<button onclick="window.location.href='plans.html'" class="px-10 sm:px-14 py-4 sm:py-6 rounded-full btn-3d-pink text-slate-900 font-black text-lg sm:text-xl hover:scale-105">
+                Find Out More
+            </button>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-background-dark py-20 sm:py-28 lg:py-32 px-4 sm:px-6 relative">
+<div class="max-w-7xl mx-auto text-center relative z-10">
+<h3 class="text-4xl sm:text-5xl lg:text-7xl font-black mb-12 sm:mb-20 tracking-tighter">Shop by Category</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-20">
+<div onclick="window.location.href='products.html'" class="group relative rounded-[2.5rem] overflow-hidden aspect-square sticker-border transition-all hover:scale-105 cursor-pointer">
+<img alt="Drinks" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxWq1xpITWq-1XER1oZVsijnJ_Rg6_DPE8B1u2EEeR00oE1LWkSqXG02EM3hIPqFDCOIYRWC5RKrLsxGMFDzYUxylGSU2OKPTjlFCHwnM4okMsFyXrx6nqDhBBFcF2hL9sLP3_7dBPPno75Yzo7nWZX2e9jIH9wGcrMOWipB4azNNSZUxq4CG7OOqEdcOn4Cj21vtl6va2c1CwMgIjxQlUENbFMcMsMkL2NdtFBbpc8QIh12H6Ii58NNuhoOy0bAzu2t2_mS61PSk"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors flex items-center justify-center">
+<h4 class="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-lg">Drinks</h4>
+</div>
+</div>
+<div onclick="window.location.href='products.html'" class="group relative rounded-[2.5rem] overflow-hidden aspect-square sticker-border transition-all hover:scale-105 cursor-pointer translate-y-8">
+<img alt="Cake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkQotrGTcCN65Zx1B8N-gyJsq8GuhycDjZur5N219AO5RARJcYZ_55iHEW_7qqEMnens8IWCAneuq5D5-aloEVr4f-tORw6AxTc1VBIcyGJdDRe6kuSVZIxoARDrKuQPreV44ClqxN5d4XKTbmXj2w3kdFzqEJV5HkN400CHpv-DqL84QRsMG2FEd-jK4GxBvXlPzXwrmbrbr_tpG6-O_-NGj_TtDXR59KpfD0hF2FghFtoh7Q13Vf7rh6_wTBA8ziFST_fsxodFs"/>
+<div class="absolute inset-0 bg-accent-pink/20 group-hover:bg-accent-pink/40 transition-colors flex items-center justify-center">
+<h4 class="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-lg">Cake</h4>
+</div>
+</div>
+<div onclick="window.location.href='products.html'" class="group relative rounded-[2.5rem] overflow-hidden aspect-square sticker-border transition-all hover:scale-105 cursor-pointer">
+<img alt="Confetti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM1ZhnqY9AfmUY1pO3lCBbFxF3A5_1Ie1RH2HIHYiACA4HIuMtvQCOkzyzhnU-45-oNbqZgPfm11BEfv9VB-lal97pslcahbXsw6LcyGF88GSyT4T35Z35zLhT-JAFHMfHCC4YxJfgyh0m2E0eHnbJji7L9nZ-sEfP1CaZZ6IMYlwY5s_7ufJqM-uZL0f6SQgPd-1fA84QgLQ2b9orAFxcNSA1YsWoW4R3iQN4lhMM5JkSkEPUp5kODeEkQIcBtc6ZY8KdlKJjhB0"/>
+<div class="absolute inset-0 bg-accent-teal/20 group-hover:bg-accent-teal/40 transition-colors flex items-center justify-center">
+<h4 class="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-lg">Confetti</h4>
+</div>
+</div>
+<div onclick="window.location.href='products.html'" class="group relative rounded-[2.5rem] overflow-hidden aspect-square sticker-border transition-all hover:scale-105 cursor-pointer translate-y-8">
+<img alt="Balloons" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNb4i86rZnRI7q4XGpQuYb825Tvi3ANuyA0GCJAUatApzIpld2YjiLGCiQKKB1bkngl6duu-GRXOFBCBUX9Xsbfaiv-Iv0InRpFdz45BOho7leOfXAnI7f92hXP8Bz8EXAwymuu4Yf5xq8X-KuzeW8Hp8cLym9EYx-BKTkvZpKjrTMIjTQ3hqGaY58g5pglfWwotvOk444tLyjThJzIX7coAsQHJJonhkXLOxtXgmayUayEd0Op48vxF4xEsCXARf35gpX_8tKrVs"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors flex items-center justify-center">
+<h4 class="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-lg">Balloons</h4>
+</div>
+</div>
+</div>
+<button onclick="window.location.href='products.html'" class="px-10 sm:px-16 py-4 sm:py-6 rounded-full btn-3d-teal text-slate-900 font-black text-xl sm:text-2xl hover:scale-105 mt-12">
+            Explore All Categories
+        </button>
+</div>
+</section>
+
+<section class="section-padding bg-white relative overflow-hidden craftyone-story" id="storyTimeline">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<span class="text-primary font-black tracking-[0.3em] uppercase text-sm">Crafting Magic Since 2018</span>
+<h3 class="text-5xl lg:text-7xl font-black tracking-tighter mt-4">The Heart of Flo’s Passion</h3>
+<p class="text-xl text-slate-600 leading-relaxed font-medium mt-6">A small start, real struggles, and a lot of love. Scroll down to see how CraftyOne grew—step by step.</p>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+<div class="lg:col-span-5 space-y-8">
+<div class="craftyone-story-card p-8 craftyone-story-step" data-story-step>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">2018 • The first spark</p>
+<h4 class="text-2xl font-black tracking-tight mt-2">One helium tank. One dream.</h4>
+<p class="text-slate-600 font-medium leading-relaxed mt-4">Flo started with tiny orders and big faith—learning design by doing, and fixing mistakes at midnight.</p>
+</div>
+
+<div class="craftyone-story-card p-8 craftyone-story-step" data-story-step>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">2019 • The struggle</p>
+<h4 class="text-2xl font-black tracking-tight mt-2">Budget limits, high expectations</h4>
+<p class="text-slate-600 font-medium leading-relaxed mt-4">Not every client had a big budget—so we mastered smart styling: maximum impact, minimum waste.</p>
+</div>
+
+<div class="craftyone-story-card p-8 craftyone-story-step" data-story-step>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">2020 • The reset</p>
+<h4 class="text-2xl font-black tracking-tight mt-2">Hard times, stronger vision</h4>
+<p class="text-slate-600 font-medium leading-relaxed mt-4">When events paused, we pivoted to DIY kits—keeping celebrations alive inside homes.</p>
+</div>
+</div>
+
+<div class="hidden lg:flex lg:col-span-2 justify-center self-stretch">
+<div class="craftyone-story-track" aria-hidden="true">
+<div class="craftyone-story-line"></div>
+<div class="craftyone-story-arrow" id="storyArrow">
+<span class="material-symbols-outlined">south</span>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-5 space-y-8">
+<div class="craftyone-story-card p-8 craftyone-story-step" data-story-step>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">2021 • The breakthrough</p>
+<h4 class="text-2xl font-black tracking-tight mt-2">A viral moment</h4>
+<p class="text-slate-600 font-medium leading-relaxed mt-4">One setup got shared everywhere—suddenly we were booking weeks ahead, not days.</p>
+</div>
+
+<div class="craftyone-story-card p-8 craftyone-story-step" data-story-step>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">2023 • CraftyOne standards</p>
+<h4 class="text-2xl font-black tracking-tight mt-2">Premium + sustainable</h4>
+<p class="text-slate-600 font-medium leading-relaxed mt-4">We built a process: clean palettes, sturdy installs, biodegradable materials, and zero chaos on event day.</p>
+</div>
+
+<div class="craftyone-story-card p-8 craftyone-story-step" data-story-step>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">Today • The mission</p>
+<h4 class="text-2xl font-black tracking-tight mt-2">Make memories feel effortless</h4>
+<p class="text-slate-600 font-medium leading-relaxed mt-4">From custom installs to quick kits—we design celebrations that look expensive, feel joyful, and stay stress-free.</p>
+</div>
+</div>
+</div>
+
+<div class="text-center mt-14">
+<button onclick="window.location.href='ourstory.html'" class="btn-3d-teal px-12 py-5 rounded-full font-black text-slate-900" data-action="go-ourstory">Read Our Story</button>
+</div>
+</div>
+</section>
+
+<section class="section-padding bg-slate-50 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-20">
+<h3 class="text-5xl lg:text-7xl font-black tracking-tighter">The CraftyOne Difference</h3>
+<div class="w-24 h-2 bg-primary mx-auto mt-6 rounded-full"></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 md:col-span-6 lg:col-span-3 p-6 sm:p-10 bg-white rounded-[3rem] sticker-border space-y-6 hover:translate-y-[-10px] transition-transform">
+<div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-4xl">celebration</span></div>
+<h4 class="text-2xl font-black tracking-tight">Hand-crafted Art</h4>
+<p class="text-slate-600 font-medium">Each balloon installation is a unique masterpiece, sculpted by hand to fit your specific venue and vibe perfectly.</p>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-3 p-6 sm:p-10 bg-white rounded-[3rem] sticker-border space-y-6 hover:translate-y-[-10px] transition-transform translate-y-4">
+<div class="w-16 h-16 rounded-2xl bg-accent-pink/20 flex items-center justify-center"><span class="material-symbols-outlined text-accent-pink text-4xl">eco</span></div>
+<h4 class="text-2xl font-black tracking-tight">Sustainable Supplies</h4>
+<p class="text-slate-600 font-medium">We lead with a green heart, using 100% biodegradable latex and eco-friendly packaging for every single order.</p>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-3 p-6 sm:p-10 bg-white rounded-[3rem] sticker-border space-y-6 hover:translate-y-[-10px] transition-transform">
+<div class="w-16 h-16 rounded-2xl bg-accent-teal/20 flex items-center justify-center"><span class="material-symbols-outlined text-accent-teal text-4xl">event_available</span></div>
+<h4 class="text-2xl font-black tracking-tight">Expert Coordination</h4>
+<p class="text-slate-600 font-medium">From initial mood boards to day-of logistics, our professional planners handle every detail so you don't have to.</p>
+</div>
+<div onclick="window.location.href='plans.html'" class="col-span-12 md:col-span-6 lg:col-span-3 p-6 sm:p-10 bg-white rounded-[3rem] sticker-border space-y-6 hover:translate-y-[-10px] transition-transform translate-y-4 cursor-pointer">
+<div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-4xl">bolt</span></div>
+<h4 class="text-2xl font-black tracking-tight">Magic Delivery</h4>
+<p class="text-slate-600 font-medium">Our 'Magic Van' fleet offers white-glove next-day delivery, ensuring your decor arrives fresh and perfectly staged.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-padding bg-primary/5 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-20 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
+<div>
+<h3 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter">Customer Love</h3>
+<p class="text-lg sm:text-xl text-slate-500 mt-2 font-medium">Hear from our community of celebration enthusiasts.</p>
+</div>
+</div>
+
+<div class="px-4 sm:px-6 pb-12 space-y-10">
+<div class="craftyone-marquee craftyone-marquee-left">
+<div class="craftyone-marquee-track gap-8">
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"The setup looked straight out of Pinterest — clean, luxe, and perfectly on theme."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-primary">@sarah_j</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Party Host</span></div></div><div class="bg-primary/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-primary tracking-widest">Birthday</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"On-time delivery, premium quality, and the colors were exactly what I imagined."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-pink">@noor_events</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Event Lead</span></div></div><div class="bg-accent-pink/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-pink tracking-widest">Corporate</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"Our photos turned out insane. The arch stayed perfect even outdoors."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-teal">@aisha_style</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Client</span></div></div><div class="bg-accent-teal/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-teal tracking-widest">Outdoor</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"Fast order, easy setup, and it looked high-end. 10/10 for last-minute parties."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-primary">@hamza_home</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Buyer</span></div></div><div class="bg-primary/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-primary tracking-widest">DIY Kit</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"The setup looked straight out of Pinterest — clean, luxe, and perfectly on theme."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-primary">@sarah_j</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Party Host</span></div></div><div class="bg-primary/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-primary tracking-widest">Birthday</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"On-time delivery, premium quality, and the colors were exactly what I imagined."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-pink">@noor_events</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Event Lead</span></div></div><div class="bg-accent-pink/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-pink tracking-widest">Corporate</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"Our photos turned out insane. The arch stayed perfect even outdoors."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-teal">@aisha_style</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Client</span></div></div><div class="bg-accent-teal/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-teal tracking-widest">Outdoor</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"Fast order, easy setup, and it looked high-end. 10/10 for last-minute parties."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-primary">@hamza_home</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Buyer</span></div></div><div class="bg-primary/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-primary tracking-widest">DIY Kit</div></div>
+</div>
+</div>
+</div>
+
+<div class="craftyone-marquee craftyone-marquee-right">
+<div class="craftyone-marquee-track gap-8">
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"The team understood the vibe instantly — every detail felt intentional and premium."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-pink">@zainab_day</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Client</span></div></div><div class="bg-accent-pink/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-pink tracking-widest">Bridal</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"The color matching was perfect. It looked custom-built for our brand launch."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-primary">@brand_studio</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Partner</span></div></div><div class="bg-primary/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-primary tracking-widest">Launch</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"So easy to order. The packaging was beautiful and everything arrived perfect."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-teal">@mariam_home</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Buyer</span></div></div><div class="bg-accent-teal/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-teal tracking-widest">Supplies</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"The team understood the vibe instantly — every detail felt intentional and premium."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-pink">@zainab_day</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Client</span></div></div><div class="bg-accent-pink/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-pink tracking-widest">Bridal</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"The color matching was perfect. It looked custom-built for our brand launch."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-primary">@brand_studio</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Partner</span></div></div><div class="bg-primary/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-primary tracking-widest">Launch</div></div>
+</div>
+<div class="w-[72vw] sm:w-[360px] lg:w-[320px] bg-white p-10 rounded-[3rem] sticker-border shrink-0">
+<div class="flex justify-end mb-4"><div class="flex text-yellow-400"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div></div>
+<p class="text-xl font-bold text-slate-800 leading-relaxed mb-8">"So easy to order. The packaging was beautiful and everything arrived perfect."</p>
+<div class="flex items-center justify-between border-t border-slate-100 pt-6"><div><span class="text-lg font-black text-accent-teal">@mariam_home</span><div class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-accent-teal text-sm">verified</span><span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Verified Buyer</span></div></div><div class="bg-accent-teal/10 px-4 py-1 rounded-full text-[10px] font-black uppercase text-accent-teal tracking-widest">Supplies</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-padding bg-white relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-4 sm:px-6">
+<span class="material-symbols-outlined floating-element top-[-20px] right-[20%] text-[120px] text-accent-teal">mail</span>
+<div class="max-w-5xl mx-auto px-4 sm:px-6">
+<div class="bg-white rounded-[4rem] sticker-border p-8 sm:p-12 lg:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full confetti-bg-v2 opacity-10"></div>
+<div class="relative z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-accent-teal/20 text-accent-teal font-black text-sm uppercase tracking-widest mb-6">Party Insider</span>
+<h3 class="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter mb-6">Join the Party!</h3>
+<p class="text-lg sm:text-2xl font-medium text-slate-600 mb-10 sm:mb-12 max-w-2xl mx-auto">Subscribe for exclusive styling tips, early access to new collections, and a little bit of magic in your inbox.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-1 px-8 py-5 rounded-full border-[4px] border-slate-100 focus:border-primary focus:ring-0 text-lg font-bold placeholder:text-slate-300 transition-all shadow-inner" placeholder="Your favorite email address..." type="email"/>
+<button class="px-12 py-5 rounded-full btn-3d-teal text-slate-900 font-black text-xl hover:scale-105">Get Invited</button>
+</form>
+<p class="mt-8 text-slate-400 font-bold text-xs uppercase tracking-widest">No spam, just pure celebration. 🎈</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="bg-background-dark text-white pt-20 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent-pink to-accent-teal"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 sm:gap-20 relative z-10">
+<div class="col-span-1 md:col-span-2 space-y-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+<h2 class="text-3xl font-black tracking-tighter">CraftyOne ✨</h2>
+</div>
+<p class="text-slate-400 max-w-sm text-lg leading-relaxed font-medium">
+                Making your moments memorable since 2018. We believe every day is a reason to celebrate.
+            </p>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">camera</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-accent-pink hover:border-accent-pink transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">share</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Quick Links</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="home.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="products.html">Shop All</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="ourstory.html">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="contactus.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Support</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="plans.html">Shipping Policy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Returns</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="privacy.html">Privacy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 sm:mt-32 pt-10 sm:pt-12 border-t border-slate-800/50 text-center">
+<p class="text-slate-500 font-bold uppercase tracking-widest text-xs"> 2024 CraftyOne. Stay sparkly &amp; keep the party going! </p>
+</div>
+</footer>
+
+<script>
+  (function () {
+    var story = document.getElementById('storyTimeline');
+    var arrow = document.getElementById('storyArrow');
+
+    function clamp(n, min, max) {
+      return Math.max(min, Math.min(max, n));
+    }
+
+    function updateStoryArrow() {
+      if (!story || !arrow) return;
+      var track = arrow.parentElement;
+      if (!track) return;
+
+      var rect = story.getBoundingClientRect();
+      var viewH = window.innerHeight || document.documentElement.clientHeight || 0;
+      if (!viewH) return;
+
+      var center = viewH * 0.5;
+      var progress = clamp((center - rect.top) / Math.max(1, rect.height), 0, 1);
+      var maxY = Math.max(0, track.clientHeight - arrow.offsetHeight);
+      arrow.style.transform = 'translateX(-50%) translateY(' + (maxY * progress) + 'px)';
+    }
+
+    if (story) {
+      var steps = Array.prototype.slice.call(story.querySelectorAll('[data-story-step]'));
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            }
+          });
+        }, { threshold: 0.2 });
+
+        steps.forEach(function (el) { io.observe(el); });
+      } else {
+        steps.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      if (!(target instanceof Element)) return;
+
+      var actionEl = target.closest('[data-action]');
+      if (!actionEl) return;
+
+      var action = actionEl.getAttribute('data-action');
+      
+      if (action === 'faq-toggle') {
+        var wrap = actionEl.closest('[data-action="faq-toggle"]');
+        if (!wrap) return;
+        var details = wrap.querySelector('div.mt-4');
+        if (!details) return;
+        details.classList.toggle('hidden');
+        return;
+      }
+
+      if (action === 'go-products') {
+        window.location.href = 'products.html';
+      } else if (action === 'go-contact') {
+        window.location.href = 'contactus.html';
+      } else if (action === 'go-ourstory') {
+        window.location.href = 'ourstory.html';
+      } else if (action === 'add-to-cart') {
+        window.location.href = 'cart.html';
+      } else if (action === 'quick-view') {
+        window.location.href = 'products.html';
+      }
+    });
+
+    updateStoryArrow();
+    window.addEventListener('scroll', updateStoryArrow, { passive: true });
+    window.addEventListener('resize', updateStoryArrow);
+  })();
+</script>
+
+</body></html>

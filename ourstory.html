@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>CraftyOne | Our Story</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#C4B5FD",
+            "accent-pink": "#F9A8D4",
+            "accent-teal": "#5EEAD4",
+            "cream": "#FFF7ED",
+            "background-light": "#F6F5F8",
+            "background-dark": "#130F23",
+          },
+          fontFamily: {
+            "display": ["Spline Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"
+          },
+          boxShadow: {
+            'soft-lavender': '0 20px 40px -10px rgba(195, 180, 253, 0.4)',
+            'sticker': '0 15px 35px rgba(0,0,0,0.15)',
+          }
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .confetti-bg-lite {
+        background-image:
+          radial-gradient(circle, #C4B5FD 2px, transparent 2px),
+          radial-gradient(circle, #F9A8D4 3px, transparent 3px),
+          radial-gradient(circle, #5EEAD4 1.5px, transparent 1.5px);
+        background-size: 70px 70px, 90px 90px, 50px 50px;
+        background-position: 0 0, 30px 30px, 10px 15px;
+        background-color: #fdfcfd;
+      }
+      .glass-card {
+        @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 shadow-soft-lavender;
+      }
+      .sticker-border {
+        @apply border-[6px] border-white shadow-sticker;
+      }
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+  <!-- Top Navigation -->
+  <nav
+    class="sticky top-0 z-50 w-full bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-primary/20 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="hidden lg:flex items-center gap-3">
+        <a data-action="share"
+          class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary transition-colors group"
+          href="#"><span class="material-symbols-outlined text-slate-900 text-xl">share</span></a>
+        <a class="w-10 h-10 flex items-center justify-center rounded-full bg-accent-pink/20 hover:bg-accent-pink transition-colors group"
+          href="#"><span class="material-symbols-outlined text-slate-900 text-xl">photo_camera</span></a>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+          <h1 class="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">CraftyOne ✨</h1>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+            href="home.html">Home</a>
+          <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+            href="about.html">About</a>
+          <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+            href="contactus.html">Contact</a>
+          <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+            href="products.html">Products</a>
+          <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+            href="plans.html">Plans</a>
+          <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+            href="reviews.html">Reviews</a>
+          <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+            href="extra.html">Our Goal</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="window.location.href='cart.html'"
+          class="flex items-center gap-2 px-6 py-2 rounded-full bg-primary text-slate-900 font-bold border-b-4 border-primary/40 active:translate-y-[2px] active:border-b-0 transition-all">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="hidden sm:inline">Cart</span>
+        </button>
+        <button onclick="window.location.href='about.html'"
+          class="flex items-center gap-2 lg:hidden px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold border-b-4 border-slate-200 shadow-sm active:border-b-0 active:translate-y-[2px]">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="confetti-bg-lite relative px-6 py-20 overflow-hidden">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+      <div class="lg:w-1/2 space-y-8 text-center lg:text-left">
+        <div
+          class="inline-flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 rounded-full px-4 py-1 border-2 border-primary/30">
+          <span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+          <span class="text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-300">The Journey
+            of Joy</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] text-slate-900 dark:text-white">
+          Crafting <span class="text-primary italic">Memories</span> Since Day One
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-400 font-medium leading-relaxed max-w-xl">
+          CraftyOne isn't just about party supplies—it's about the sparkle in a child's eye, the laughter at a reunion,
+          and the magic of being together.
+        </p>
+      </div>
+      <div class="lg:w-1/2 relative">
+        <div class="relative z-10 floating">
+          <img
+            class="w-full h-auto rounded-3xl sticker-border rotate-3 hover:rotate-0 transition-transform duration-500"
+            alt="CraftyOne Celebration"
+            src="https://images.unsplash.com/photo-1530103043960-ef38714abb15?auto=format&fit=crop&q=80&w=800" />
+        </div>
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-accent-pink/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-teal/20 rounded-full blur-3xl"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Our Mission Section -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="glass-card p-10 group hover:-translate-y-2 transition-all">
+        <div
+          class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 border-b-4 border-primary/40">
+          <span class="material-symbols-outlined text-primary text-3xl">heart_broken</span>
+        </div>
+        <h3 class="text-2xl font-black mb-4 group-hover:text-primary transition-colors">Start with Heart</h3>
+        <p class="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">We began in a small garage with a big
+          mission: to make high-end celebrations accessible to everyone.</p>
+      </div>
+      <div class="glass-card p-10 group hover:-translate-y-2 transition-all border-accent-pink/30">
+        <div
+          class="w-16 h-16 bg-accent-pink/20 rounded-2xl flex items-center justify-center mb-6 border-b-4 border-accent-pink/40">
+          <span class="material-symbols-outlined text-accent-pink text-3xl">draw</span>
+        </div>
+        <h3 class="text-2xl font-black mb-4 group-hover:text-accent-pink transition-colors">Design & Delight</h3>
+        <p class="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Our in-house designers curate unique
+          themes that you won't find anywhere else—bringing artistic flair to every box.</p>
+      </div>
+      <div class="glass-card p-10 group hover:-translate-y-2 transition-all border-accent-teal/30">
+        <div
+          class="w-16 h-16 bg-accent-teal/20 rounded-2xl flex items-center justify-center mb-6 border-b-4 border-accent-teal/40">
+          <span class="material-symbols-outlined text-accent-teal text-3xl">eco</span>
+        </div>
+        <h3 class="text-2xl font-black mb-4 group-hover:text-accent-teal transition-colors">Green Party</h3>
+        <p class="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">We're committed to the planet. 80% of
+          our products are biodegradable or made from recycled materials.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900/20 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto text-center mb-20">
+      <h2 class="text-5xl font-black tracking-tight mb-4">The CraftyOne <span
+          class="text-primary italic">Timeline</span></h2>
+      <p class="text-slate-500 font-bold uppercase tracking-widest text-xs">How we grew from a spark to a celebration
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto relative">
+      <!-- Vertical Line -->
+      <div class="absolute left-1/2 -translate-x-1/2 h-full w-2 bg-primary/20 rounded-full hidden md:block"></div>
+
+      <div class="space-y-24">
+        <!-- Event 1 -->
+        <div class="relative flex flex-col md:flex-row items-center gap-12 group">
+          <div class="md:w-1/2 text-center md:text-right">
+            <div class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-black mb-4">2018
+            </div>
+            <h4 class="text-3xl font-black mb-3">The First Balloon</h4>
+            <p class="text-slate-600 dark:text-slate-400 font-medium">CraftyOne was born in a dorm room, helping
+              classmates celebrate graduations with DIY decor kits.</p>
+          </div>
+          <div
+            class="w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(195,180,253,0.8)] z-10 relative hidden md:block">
+          </div>
+          <div class="md:w-1/2">
+            <div
+              class="p-4 bg-white dark:bg-slate-900 rounded-3xl sticker-border transform group-hover:-rotate-3 transition-transform">
+              <img class="w-full h-40 object-cover rounded-xl"
+                src="https://images.unsplash.com/photo-1574375927951-df6850466a57?auto=format&fit=crop&q=80&w=400"
+                alt="Starting out" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="relative flex flex-col md:flex-row-reverse items-center gap-12 group">
+          <div class="md:w-1/2 text-center md:text-left">
+            <div class="inline-block px-4 py-1 rounded-full bg-accent-pink/10 text-accent-pink text-sm font-black mb-4">
+              2020</div>
+            <h4 class="text-3xl font-black mb-3">Celebration in a Box</h4>
+            <p class="text-slate-600 dark:text-slate-400 font-medium">We launched our signature 'Party Boxes', shipping
+              everything needed for a home bash directly to doorsteps.</p>
+          </div>
+          <div
+            class="w-4 h-4 rounded-full bg-accent-pink shadow-[0_0_20px_rgba(244,114,182,0.8)] z-10 relative hidden md:block">
+          </div>
+          <div class="md:w-1/2">
+            <div
+              class="p-4 bg-white dark:bg-slate-900 rounded-3xl sticker-border transform group-hover:rotate-3 transition-transform">
+              <img class="w-full h-40 object-cover rounded-xl"
+                src="https://images.unsplash.com/photo-1549462184-b09ad0a4460c?auto=format&fit=crop&q=80&w=400"
+                alt="Launch" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="relative flex flex-col md:flex-row items-center gap-12 group">
+          <div class="md:w-1/2 text-center md:text-right">
+            <div class="inline-block px-4 py-1 rounded-full bg-accent-teal/10 text-accent-teal text-sm font-black mb-4">
+              2024</div>
+            <h4 class="text-3xl font-black mb-3">Sparkling World-Wide</h4>
+            <p class="text-slate-600 dark:text-slate-400 font-medium">Today, CraftyOne serves over 50,000 party hosts
+              globally, from NYC to Tokyo.</p>
+          </div>
+          <div
+            class="w-4 h-4 rounded-full bg-accent-teal shadow-[0_0_20px_rgba(94,234,212,0.8)] z-10 relative hidden md:block">
+          </div>
+          <div class="md:w-1/2">
+            <div
+              class="p-4 bg-white dark:bg-slate-900 rounded-3xl sticker-border transform group-hover:-rotate-3 transition-transform">
+              <img class="w-full h-40 object-cover rounded-xl"
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=400"
+                alt="Global growth" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Final CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto glass-card p-12 md:p-16 text-center relative overflow-hidden rounded-3xl">
+      <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+      <h2 class="text-4xl font-black mb-6">Want to Join the Sparkle?</h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-xl mx-auto font-medium">We're always looking for
+        creative souls, event planners, and balloon artists to join our growing global family.</p>
+      <button onclick="window.location.href='contactus.html'"
+        class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-12 py-4 rounded-full text-xl font-black hover:scale-105 transition-all shadow-xl">
+        Work with Us
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-background-dark text-white pt-32 pb-12 px-6 relative overflow-hidden">
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent-pink to-accent-teal"></div>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-20 relative z-10 text-center md:text-left">
+      <div class="col-span-1 md:col-span-2 space-y-8">
+        <div class="flex items-center justify-center md:justify-start gap-2">
+          <span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+          <h2 class="text-3xl font-black tracking-tighter">CraftyOne ✨</h2>
+        </div>
+        <p class="text-slate-400 max-w-sm mx-auto md:mx-0 text-lg leading-relaxed font-medium">
+          Making your moments memorable since 2018. We believe every day is a reason to celebrate.
+        </p>
+        <div class="flex justify-center md:justify-start gap-6">
+          <a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110"
+            href="#"><span class="material-symbols-outlined">camera</span></a>
+          <a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-accent-pink hover:border-accent-pink transition-all hover:scale-110"
+            href="#"><span class="material-symbols-outlined">share</span></a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-xl font-black mb-8 text-white/90">Quick Links</h5>
+        <ul class="space-y-6 text-slate-400 font-bold">
+          <li><a class="hover:text-primary transition-colors" href="home.html">Home</a></li>
+          <li><a class="hover:text-primary transition-colors" href="products.html">Shop All</a></li>
+          <li><a class="hover:text-primary transition-colors" href="ourstory.html">Our Story</a></li>
+          <li><a class="hover:text-primary transition-colors" href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xl font-black mb-8 text-white/90">Support</h5>
+        <ul class="space-y-6 text-slate-400 font-bold">
+          <li><a class="hover:text-accent-pink transition-colors" href="privacy.html">Privacy</a></li>
+          <li><a class="hover:text-accent-pink transition-colors" href="terms.html">Terms</a></li>
+          <li><a class="hover:text-accent-pink transition-colors" href="plans.html">Planning</a></li>
+          <li><a class="hover:text-accent-pink transition-colors" href="reviews.html">Reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-32 pt-12 border-t border-slate-800/50 text-center">
+      <p class="text-slate-500 font-bold uppercase tracking-widest text-xs"> 2024 CraftyOne. Stay sparkly & keep the
+        party going! </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      if (!(target instanceof Element)) return;
+      var actionEl = target.closest('[data-action]');
+      if (!actionEl) return;
+      var action = actionEl.getAttribute('data-action');
+      if (action === 'share') {
+        e.preventDefault();
+        var shareData = { title: document.title, url: window.location.href };
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () { });
+        } else {
+          window.prompt('Copy link:', window.location.href);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

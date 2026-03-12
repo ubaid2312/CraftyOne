@@ -1,0 +1,429 @@
+<html><head>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#4e25f4",
+          "background-light": "#f6f5f8",
+          "background-dark": "#131022",
+        },
+        fontFamily: {
+          "display": ["Spline Sans"]
+        },
+        borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .confetti-bg {
+    background-color: #f6f5f8;
+    background-image: radial-gradient(#4e25f4 1px, transparent 1px), radial-gradient(#4e25f4 1px, #f6f5f8 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.05;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .sticker-border {
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  .wavy-border {
+    mask-image: radial-gradient(10px at 15px 0%, #000 98%, #0000), radial-gradient(10px at 15px 100%, #000 98%, #0000), radial-gradient(10px at 0% 15px, #000 98%, #0000), radial-gradient(10px at 100% 15px, #000 98%, #0000);
+    mask-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    mask-size: 30px 10px, 30px 10px, 10px 30px, 10px 30px;
+  }
+  
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(78, 37, 244, 0.1);
+  }
+</style>
+<div class="confetti-bg"></div>
+ <!-- Top Navigation -->
+ <nav class="sticky top-0 z-50 w-full bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-primary/20 px-6 py-4">
+ <div class="max-w-7xl mx-auto flex items-center justify-between">
+ <div class="hidden lg:flex items-center gap-3">
+ <a data-action="share" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 hover:bg-primary transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">share</span></a>
+ <a class="w-10 h-10 flex items-center justify-center rounded-full bg-accent-pink/20 hover:bg-accent-pink transition-colors group" href="#"><span class="material-symbols-outlined text-slate-900 text-xl">photo_camera</span></a>
+ </div>
+ <div class="flex flex-col items-center gap-1">
+ <div class="flex items-center gap-2">
+ <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+ <h1 class="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">CraftyOne ✨</h1>
+ </div>
+ <div class="hidden md:flex items-center gap-8">
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="home.html">Home</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="about.html">About</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="contactus.html">Contact</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="products.html">Products</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="plans.html">Plans</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="reviews.html">Reviews</a>
+ <a class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors" href="extra.html">Our Goal</a>
+ </div>
+ </div>
+ <div class="flex items-center gap-3">
+ <button onclick="window.location.href='cart.html'" class="flex items-center gap-2 px-6 py-2 rounded-full btn-3d-primary text-slate-900 font-bold">
+ <span class="material-symbols-outlined">shopping_bag</span>
+ <span class="hidden sm:inline">Cart</span>
+ </button>
+ <button onclick="window.location.href='about.html'" class="flex items-center gap-2 px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold border-b-4 border-slate-200 shadow-sm active:border-b-0 active:translate-y-[2px]">
+ <span class="material-symbols-outlined">person</span>
+ </button>
+ </div>
+ </div>
+ </nav>
+<main class="max-w-7xl mx-auto px-6 py-12">
+<!-- Hero Section -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div>
+<h2 class="text-5xl font-black text-slate-900 dark:text-white mb-4">The Party Shop</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg">Everything you need for the perfect celebration, from balloons to confetti cannons.</p>
+</div>
+<div class="w-full md:w-96">
+<div class="relative group">
+<div class="absolute -inset-1 bg-primary/20 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative flex items-center bg-white dark:bg-slate-900 border-2 border-primary/30 rounded-xl px-4 py-3">
+<span class="material-symbols-outlined text-primary/40 mr-3">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-slate-900 dark:text-white placeholder:text-slate-400" placeholder="Search party supplies..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 space-y-8 flex-shrink-0">
+<div>
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+            Filter by Party
+          </h3>
+<!-- Color Filter -->
+<div class="space-y-4 mb-8">
+<p class="text-xs font-black uppercase tracking-wider text-slate-400">Color Palette</p>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-2 border-primary/20 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm font-medium text-slate-600 group-hover:text-primary transition-colors">Lavender Dreams</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-2 border-primary/20 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm font-medium text-slate-600 group-hover:text-primary transition-colors">Teal Splash</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-2 border-primary/20 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm font-medium text-slate-600 group-hover:text-primary transition-colors">Rainbow Pop</span>
+</label>
+</div>
+</div>
+<!-- Theme Filter -->
+<div class="space-y-4 mb-8">
+<p class="text-xs font-black uppercase tracking-wider text-slate-400">Occasion</p>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-2 border-primary/20 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm font-medium text-slate-600 group-hover:text-primary transition-colors">Birthday Bash</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-2 border-primary/20 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm font-medium text-slate-600 group-hover:text-primary transition-colors">Baby Shower</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-2 border-primary/20 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm font-medium text-slate-600 group-hover:text-primary transition-colors">Wedding Vibes</span>
+</label>
+</div>
+</div>
+<!-- Product Type -->
+<div class="space-y-4">
+<p class="text-xs font-black uppercase tracking-wider text-slate-400">Product Category</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full bg-primary text-white text-xs font-bold">Balloons</button>
+<button class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20">Tableware</button>
+<button class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20">Decor</button>
+<button class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20">Favors</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden sticker-border hover-lift group">
+<div class="aspect-square relative overflow-hidden bg-slate-100">
+<img alt="Balloons" class="w-full h-full object-cover" data-alt="Colorful rainbow balloon arch kit in a bright room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCpJD9PGAmjvkmtaQ20b_ZZEq1zp4ePbtclWr56d0JqGX9cYt0EgqX1UribyocW010S-07DoVrnFhFYeGv4oWwPg5YfKt83w4DQUvbTDUuaCRQI2f3g8SQAtM8zuq6tK93KmNK1dXeFyJGGOtX1ZKQUvCMQfkcq8J6Tq_ggHf-7VBSHI4okqsI_vZayzDZmpzeSDRVNDbaRQroSDt-vDWxsub5hRQdhie5PT5qnKXWyVc5GL_g2n5CeXTyGW-6TnrcYU6dm3hEXWI"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-[10px] font-black uppercase px-2 py-1 rounded">Best Seller</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Rainbow Balloon Arch Kit</h4>
+<p class="text-slate-500 text-sm mb-4">Complete 120-piece DIY set.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$34.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90" data-action="add-to-cart">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden sticker-border hover-lift group">
+<div class="aspect-square relative overflow-hidden bg-slate-100">
+<img alt="Confetti" class="w-full h-full object-cover" data-alt="Action shot of a confetti cannon explosion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAr13TB7K0azAlyaFwzkKhdDcRcRfWyggmWys3ePRZ_YZvltMYr_K_gy0pd0x1yzaOb_g8bzxVOQoiAJkhdMvPQXndPmCxF0Xlv4Zdb8Po918FhygRuDZcWQD_cNcv_kiJ2nIPYDV7MmD_3EyUtVpvCdyA9HWw9mj3s5K8pwYZkKjV4iQcYLtAXtkr2jHymCdFLeH0_mFkthvhtK-zxDn4Aoxj05fuqd0A14giGLjtxjE_EJJ1F2OQSviUjQjx63vvHlXkn5uZrF0"/>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Confetti Cannon Set</h4>
+<p class="text-slate-500 text-sm mb-4">Biodegradable metallic gold.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$18.50</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90" data-action="add-to-cart">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden sticker-border hover-lift group">
+<div class="aspect-square relative overflow-hidden bg-slate-100">
+<img alt="Tableware" class="w-full h-full object-cover" data-alt="Elegant pastel tableware bundle set for 12 people" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbDx3poRfKWU4tYVJiyxEkpKSZolCyTxRcMlTiyXuC6ILptQjsmbydJpK7DvKOs7YwAOJcz7Ww7G6XNmiFLJZqjAh5xCXxs2Fcr2BU_P2KU-FjkV_v6j1OfllmdZVEqP3nrgoZQ5E98UlPJvSsk-YIsk0DvLnawZftc41lYipKbc4PDG78G8U8Y6qWxv1BLYAR0wUItCbSAS-Yks876WFTbaeeY62u3ba171TXQa6WNfZv9UNlBUrCQXR-Wl9iTrZUL8Tffi9pwz4"/>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Pastel Tableware Bundle</h4>
+<p class="text-slate-500 text-sm mb-4">Plates, cups &amp; napkins for 24.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$42.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90" data-action="add-to-cart">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden sticker-border hover-lift group">
+<div class="aspect-square relative overflow-hidden bg-slate-100">
+<img alt="Party Hats" class="w-full h-full object-cover" data-alt="Fun variety of polka dot party hats" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqxZKiHUaG6mWJOumZfG3YMRZeXc1Zxs9yAG_l5jPMwwd-mwvN_lLiFboa9bVz9yhGSaAvC85L3Uc1PKzkAZrCda75DkztItiojgabzqFZADVRxGQmeUh8xWdZ88jIFu2nlGPIK33Lq00PBR_MiY9CGaoU3vtGAgla8eRmuA5cKgTxzKmv1qlqwzjhduRxgZn8GY8tGDBRAFIFo3sog0EyjAi2SHelOTuF4dgx429niLZZ-vMv7iVG_86w0j9KJKNk4cQGfodjpcc"/>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Polka Dot Party Hats</h4>
+<p class="text-slate-500 text-sm mb-4">Pack of 12 luxury cardstock.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$12.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90" data-action="add-to-cart">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden sticker-border hover-lift group">
+<div class="aspect-square relative overflow-hidden bg-slate-100">
+<img alt="Neon Sign" class="w-full h-full object-cover" data-alt="Let's Party neon sign glowing on a brick wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9p-mZbd-WyyINzlT-8x0c0LdQ70chuKWefNnXK3ZjGZZuyY5a6QZdmv6DH_fOUwy0r9XavzL-jg-iDj1jUb01OqAFs85eoMOTXil6pgj5gQHXBMe-nqu_BBsynB8JJW1ttlSRIC-DZUlspI8qZiBd4SLHYFHTl-O19s-5-1mFlQlDMn71VBQwuQzCFDU6GZj2JvtH7G1CzXnmFBLxAFbPyC0eyEIb1AzggpjajKVxFjlOlU_KzhftsM_PtK3ggxRVmCI92X4zXv0"/>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">'Let's Party' Neon Sign</h4>
+<p class="text-slate-500 text-sm mb-4">USB-powered LED decoration.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$65.00</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90" data-action="add-to-cart">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden sticker-border hover-lift group">
+<div class="aspect-square relative overflow-hidden bg-slate-100">
+<img alt="Party Streamers" class="w-full h-full object-cover" data-alt="Tangled mess of bright colorful party streamers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxlXLVHCZVDxuiiAhzXJfG8dI7j0TolWCI0FhJGNaDvE3p4SeNr6ydlXg_iU-bzWoJznzuy0Zw8UYNgzdEl53FTXH-c9Zp2Xq6wLPW0joRThov9V35vCajVztRz21uFGebrudGeHwVvF9-dt_dNpOsOz_ebvoeNEz8x-te3M33nqctQMlhiGruZZE3wPYdiz5aLRYQ3tUP1YeEKJi_Em9TEaVOdiOWCNzQPy6OZzkFUoAhznqPOj8bh5sS7WYxY6pcSlJeDhZY9h4"/>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Luxe Streamer Backdrop</h4>
+<p class="text-slate-500 text-sm mb-4">6ft tall crepe paper curtains.</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$22.95</span>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90" data-action="add-to-cart">
+<span class="material-symbols-outlined text-sm">add</span> Quick Add
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-3">
+<button class="w-12 h-12 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" data-action="coming-soon">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</button>
+<button class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-white transition-all" data-action="coming-soon">2</button>
+<button class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-white transition-all" data-action="coming-soon">3</button>
+<div class="px-2 text-slate-400">...</div>
+<button class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-white transition-all" data-action="coming-soon">12</button>
+<button class="w-12 h-12 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" data-action="coming-soon">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-background-dark text-white pt-20 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent-pink to-accent-teal"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 sm:gap-20 relative z-10">
+<div class="col-span-1 md:col-span-2 space-y-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+<h2 class="text-3xl font-black tracking-tighter">CraftyOne ✨</h2>
+</div>
+<p class="text-slate-400 max-w-sm text-lg leading-relaxed font-medium">
+                Making your moments memorable since 2018. We believe every day is a reason to celebrate.
+            </p>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">camera</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center hover:bg-accent-pink hover:border-accent-pink transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined text-2xl">share</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Quick Links</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="home.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="products.html">Shop All</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="ourstory.html">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="contactus.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-xl font-black mb-8 tracking-tight text-white/90">Support</h5>
+<ul class="space-y-6 text-slate-400 font-bold">
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="plans.html">Shipping Policy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Returns</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="privacy.html">Privacy</a></li>
+<li><a class="hover:text-accent-pink transition-colors flex items-center gap-2" href="terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 sm:mt-32 pt-10 sm:pt-12 border-t border-slate-800/50 text-center">
+<p class="text-slate-500 font-bold uppercase tracking-widest text-xs"> 2024 CraftyOne. Stay sparkly &amp; keep the party going! </p>
+</div>
+</footer>
+
+<script>
+(function () {
+  var CART_KEY = 'craftyone_cart_v1';
+
+  function safeParse(json, fallback) {
+    try { return JSON.parse(json); } catch (_) { return fallback; }
+  }
+
+  function loadCart() {
+    return safeParse(localStorage.getItem(CART_KEY) || '[]', []);
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  }
+
+  function normalizePrice(text) {
+    var n = Number(String(text || '').replace(/[^0-9.]/g, ''));
+    return isNaN(n) ? 0 : n;
+  }
+
+  function slugify(s) {
+    return String(s || '')
+      .toLowerCase()
+      .replace(/['’]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  function addToCart(item) {
+    var cart = loadCart();
+    var existing = cart.find(function (x) { return x.id === item.id; });
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id: item.id, name: item.name, price: item.price, image: item.image, qty: 1 });
+    }
+    saveCart(cart);
+  }
+
+  function getItemFromCard(card) {
+    var nameEl = card.querySelector('h4');
+    var priceEl = card.querySelector('span.text-xl.font-black');
+    var imgEl = card.querySelector('img');
+    var name = nameEl ? nameEl.textContent.trim() : 'Product';
+    var price = normalizePrice(priceEl ? priceEl.textContent : '0');
+    var image = imgEl ? imgEl.getAttribute('src') : '';
+    return { id: slugify(name), name: name, price: price, image: image };
+  }
+
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+    if (!(target instanceof Element)) return;
+
+    var actionEl = target.closest('[data-action]');
+    if (!actionEl) return;
+
+    var action = actionEl.getAttribute('data-action');
+
+    if (action === 'open-cart') {
+      window.location.href = 'cart.html';
+      return;
+    }
+
+    if (action === 'open-account') {
+      window.location.href = 'contactus.html';
+      return;
+    }
+
+    if (action === 'share') {
+      e.preventDefault();
+      var shareData = { title: document.title, url: window.location.href };
+      if (navigator.share) {
+        navigator.share(shareData).catch(function () {});
+      } else {
+        window.prompt('Copy link:', window.location.href);
+      }
+      return;
+    }
+
+    if (action === 'coming-soon') {
+      alert('Coming soon!');
+      return;
+    }
+
+    if (action === 'add-to-cart') {
+      var card = actionEl.closest('.bg-white');
+      if (!card) return;
+      var item = getItemFromCard(card);
+      addToCart(item);
+      actionEl.setAttribute('aria-label', 'Added');
+      actionEl.innerHTML = '<span class="material-symbols-outlined text-sm">check</span> Added';
+      setTimeout(function () {
+        actionEl.innerHTML = '<span class="material-symbols-outlined text-sm">add</span> Quick Add';
+      }, 900);
+      return;
+    }
+  });
+})();
+</script>
+</body></html>
